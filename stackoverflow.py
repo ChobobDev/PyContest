@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 def get_pagination(job_url):
   target = requests.get(job_url)
   soup = BeautifulSoup(target.text, "html.parser")
-  paginations = soup.find("div", class_="s-pagination").find_all("a")
-  last_page = paginations[-2].get_text(strip=True)
+  pagination = soup.find("div", class_="s-pagination").find_all("a")
+  last_page = pagination[-2].get_text(strip=True)
   return int(last_page)
 
 def get_job_detail(jobs):
