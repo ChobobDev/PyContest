@@ -15,6 +15,7 @@ def extract_jobs(soup):
         'title': title,
         'link':f"https://weworkremotely.com{link}",
       }
+      print(job)
       jobs.append(job)
   return jobs
 

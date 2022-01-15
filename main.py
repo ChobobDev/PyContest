@@ -1,5 +1,6 @@
 from flask import Flask,render_template
 import stackoverflow as so
+import weworkremotely as wwr
 app = Flask(__name__)
 
 @app.route("/")
@@ -8,5 +9,6 @@ def hello():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    so.get_jobs(["python"])
+    # so.get_jobs(["python"])
+    # wwr.get_jobs(["python"])
     app.run()
