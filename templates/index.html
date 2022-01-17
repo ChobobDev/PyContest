@@ -5,36 +5,12 @@
     <title>Gopher Job Scrapper</title>
 </head>
 <body>
-    <table id="table">
-        <thead class="border-b-2 border-gray-800">
-            <tr>
-                <th class="text-left number">#</th>
-                <th class="text-left site">site</th>
-                <th class="text-left company">company</th>
-                <th class="text-left location">location</th>
-                <th class="text-left title">title</th>
-                <th class="text-left link">link</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for job in jobs %}
-            <tr>
-                <td class="td number">{{job.number}}</td>
-                <td class="td site">{{job.site}}</td>
-                <td class="td company">{{job.company}}</td>
-                <td class="td location">{{job.location}}</td>
-                <td class="td title">{{job.title}}</td>
-                <td class="td link">
-                    <a href={{job.link}}>
-                        <div style="height:100%;width:100%">
-                          Link
-                        </div>
-                      </a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    
+    <form method="POST" action="/result">
+        StackOverflow <input type="checkbox" value="so" name="Site">
+        WeWorkRemotely <input type="checkbox" value="wrr" name="Site">
+        RemoteOK<input type="checkbox" value="ro" name="Site">
+        <input type="submit">
+    </form>
+
 </body>
 </html>
