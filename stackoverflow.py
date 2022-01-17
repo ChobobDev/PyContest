@@ -1,8 +1,7 @@
 import tqdm
+import request_soup as rs
 
-def get_pagination(job_url):
-  target = requests.get(job_url)
-  soup = BeautifulSoup(target.text, "html.parser")
+def get_pagination(soup):
   pagination = soup.find("div", class_="s-pagination").find_all("a")
   last_page = pagination[-2].get_text(strip=True)
   return int(last_page)
@@ -20,23 +19,21 @@ def get_job_detail(jobs_table):
       "title": title,
       "link": f"https://stackoverflow.com{link}",
     }
+    print(job)
     jobs.append(job)
   return jobs
 
 def extract_pages(job_url,last_page):
   for page in range(1,last_page+1):
-    page_results=requests.get(f"{job_url}&pg={page}")
-    soup = BeautifulSoup(page_results.text, "html.parser")
-    jobs_table= soup.find_all("div", {"class": "-job"})
-    get_job_detail(jobs_table)
-
-
+    soup=rs.requestWithUgerAgent(f"{job_url}&pg={page}").find_all("div", {"class": "-job"})
+    get_job_detail(soup)
 
 def get_jobs(jobs):
   for job in jobs:
     try:
       job_url=f"https://stackoverflow.com/jobs?q={job}&sort=i"
-      last_page=get_pagination(job_url)
+      soup=rs.requestWithUgerAgent(job_url)
+      last_page=get_pagination(soup)
       extract_pages(job_url,last_page)
     except:
       return []

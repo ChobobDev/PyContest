@@ -10,7 +10,7 @@ def hello():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    # so.get_jobs(["python"])
+    so.get_jobs(["python"])
     # wwr.get_jobs(["python"])
-    ro.get_jobs(["python"])
+    # ro.get_jobs(["python"])
     app.run()
