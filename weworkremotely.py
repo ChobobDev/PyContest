@@ -1,5 +1,5 @@
-import requests,tqdm
-from bs4 import BeautifulSoup
+import tqdm
+import request_soup as rs
 
 def extract_jobs(soup):
   jobs=[]
@@ -24,7 +24,7 @@ def get_jobs(jobs):
   for job in jobs:
     try:
       job_url=f"https://weworkremotely.com/remote-jobs/search?term={job}"
-      soup = BeautifulSoup(requests.get(job_url).text,"html.parser").find_all('section', {'class':'jobs'})
+      soup = rs.requestWithUgerAgent(job_url).find_all('section', {'class':'jobs'})
       extract_jobs(soup)
     except:
       return []

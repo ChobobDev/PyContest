@@ -1,6 +1,7 @@
 from flask import Flask,render_template
 import stackoverflow as so
 import weworkremotely as wwr
+import remoteok as ro
 app = Flask(__name__)
 
 @app.route("/")
@@ -11,4 +12,5 @@ def hello():
 if __name__ == "__main__":
     # so.get_jobs(["python"])
     # wwr.get_jobs(["python"])
+    ro.get_jobs(["python"])
     app.run()

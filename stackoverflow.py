@@ -1,5 +1,4 @@
-import requests,tqdm
-from bs4 import BeautifulSoup
+import tqdm
 
 def get_pagination(job_url):
   target = requests.get(job_url)
