@@ -12,10 +12,10 @@ def extract_jobs(soup):
       job = {
         'site': "WeWorkRemotely",
         'company':company,
+        'location':"N/A",
         'title': title,
         'link':f"https://weworkremotely.com{link}",
       }
-      print(job)
       jobs.append(job)
   return jobs
 
@@ -25,7 +25,7 @@ def get_jobs(jobs):
     try:
       job_url=f"https://weworkremotely.com/remote-jobs/search?term={job}"
       soup = rs.requestWithUgerAgent(job_url).find_all('section', {'class':'jobs'})
-      extract_jobs(soup)
+      return extract_jobs(soup)
     except:
       return []
 

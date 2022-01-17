@@ -19,14 +19,13 @@ def get_job_detail(jobs_table):
       "title": title,
       "link": f"https://stackoverflow.com{link}",
     }
-    print(job)
     jobs.append(job)
   return jobs
 
 def extract_pages(job_url,last_page):
   for page in range(1,last_page+1):
-    soup=rs.requestWithUgerAgent(f"{job_url}&pg={page}").find_all("div", {"class": "-job"})
-    get_job_detail(soup)
+    soup=rs.requestWithUgerAgent(f"{job_url}&pg={page}").find_all("div", {"class": "-job"}) 
+    return get_job_detail(soup)
 
 def get_jobs(jobs):
   for job in jobs:
@@ -34,7 +33,7 @@ def get_jobs(jobs):
       job_url=f"https://stackoverflow.com/jobs?q={job}&sort=i"
       soup=rs.requestWithUgerAgent(job_url)
       last_page=get_pagination(soup)
-      extract_pages(job_url,last_page)
+      return extract_pages(job_url,last_page)
     except:
       return []
 
