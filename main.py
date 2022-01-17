@@ -11,7 +11,6 @@ def result():
         print(selected_site)
     jobs=[]
     for site in selected_site:
-        print(site)
         if site=="so":
             jobs.extend(so.get_jobs(["Python"]))
         if site=="wwr":
@@ -24,7 +23,7 @@ def result():
             job["number"]=n
         n+=1
     print(jobs)
-    print(so.get_jobs(["Python"]))
+    print(wwr.get_jobs(["Python"]))
     return render_template('result.html',jobs=jobs)
 
 
