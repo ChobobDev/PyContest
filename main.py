@@ -7,23 +7,22 @@ app = Flask(__name__)
 @app.route("/result",methods=['GET','POST'])
 def result():
     if request.method == 'POST':
+        job_name = request.form['job_name']
         selected_site=request.form.getlist('Site')
         print(selected_site)
     jobs=[]
     for site in selected_site:
         if site=="so":
-            jobs.extend(so.get_jobs(["Python"]))
+            jobs.extend(so.get_jobs([job_name]))
         if site=="wwr":
-            jobs.extend(wwr.get_jobs(["Python"]))
+            jobs.extend(wwr.get_jobs([job_name]))
         if site=="ro":
-            jobs.extend(ro.get_jobs(["Python"]))
+            jobs.extend(ro.get_jobs([job_name]))
     n=1
     for job in jobs:
         if "number" not in job:
             job["number"]=n
         n+=1
-    print(jobs)
-    print(wwr.get_jobs(["Python"]))
     return render_template('result.html',jobs=jobs)
 
 
