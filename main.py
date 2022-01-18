@@ -9,7 +9,6 @@ def result():
     if request.method == 'POST':
         job_name = request.form['job_name']
         selected_site=request.form.getlist('Site')
-        print(selected_site)
     jobs=[]
     for site in selected_site:
         if site=="so":
