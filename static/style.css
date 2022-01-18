@@ -1,0 +1,8 @@
+html,body {cursor: url("https://user-images.githubusercontent.com/32432141/149954575-279614c7-04af-497a-a8fc-5e4d29a8e42b.png"), auto;}
+input,a { cursor: url("/static/img/onCursor.png"), auto;}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Gopher Job Scrapper</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div id="loading" style="display:none;"><img src="loading.gif" alt="" />Loading!</div>
-    <form method="POST" action="/result">
+    <div>
+    </div>
+    <form method="POST" action="/result" class="center">
         <div id="content">
             <input type="text" size = "35" name="job_name" placeholder= "Type Language You would like to Apply">
             StackOverflow <input type="checkbox" value="so" name="Site">
@@ -17,7 +18,6 @@
         </div>
     </form>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-
-
+    <div id="loading" style="display:none;"><img src="/static/img/loading.gif" alt="" class="center"/></div>
 </body>
 </html>
