@@ -13,7 +13,6 @@
                 <th class="text-left company">company</th>
                 <th class="text-left location">location</th>
                 <th class="text-left title">title</th>
-                <th class="text-left link">link</th>
             </tr>
         </thead>
         <tbody>
@@ -21,16 +20,15 @@
             <tr>
                 <td class="td number">{{job.number}}</td>
                 <td class="td site">{{job.site}}</td>
-                <td class="td company">{{job.company}}</td>
-                <td class="td location">{{job.location}}</td>
-                <td class="td title">{{job.title}}</td>
-                <td class="td link">
+                <td class="td company">
                     <a href={{job.link}}>
                         <div style="height:100%;width:100%">
-                          Link
+                            {{job.company}}
                         </div>
                       </a>
                 </td>
+                <td class="td location">{{job.location}}</td>
+                <td class="td title">{{job.title}}</td>
             </tr>
             {% endfor %}
         </tbody>
