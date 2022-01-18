@@ -27,9 +27,9 @@ def get_jobs(jobs):
     try:
       job_url=f"https://weworkremotely.com/remote-jobs/search?term={job}"
       soup = rs.requestWithUgerAgent(job_url).find_all('section', {'class':'jobs'})
-      p1 = Process(target=extract_jobs, args=(soup,))
-      p1.start()
-      p1.join()
+      wwrp1 = Process(target=extract_jobs, args=(soup,))
+      wwrp1.start()
+      wwrp1.join()
       return job_list
     except:
       return []

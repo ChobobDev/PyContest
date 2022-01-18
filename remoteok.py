@@ -25,9 +25,9 @@ def get_jobs(jobs):
     try:
       job_url= f'https://remoteok.com/remote-{job}-jobs'
       soup=rs.requestWithUgerAgent(job_url).find_all('tr', {'class':'job'})
-      p1 = Process(target=extract_jobs, args=(soup,))
-      p1.start()
-      p1.join()
+      rop1 = Process(target=extract_jobs, args=(soup,))
+      rop1.start()
+      rop1.join()
       return job_list
     except:
       return []

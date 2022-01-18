@@ -18,7 +18,9 @@
         <tbody>
             {% for job in jobs %}
             <tr>
-                <td class="td number">{{job.number}}</td>
+                <td class="td number">{{loop.index}}
+                    <div class="filter"></div>
+                </td>
                 <td class="td site">{{job.site}}</td>
                 <td class="td company">
                     <a href={{job.link}}>

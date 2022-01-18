@@ -29,9 +29,9 @@ def extract_pages(job_url,last_page):
   job_from_page=[]
   for page in tqdm(range(1,last_page+1)):
     soup=rs.requestWithUgerAgent(f"{job_url}&pg={page}").find_all("div", {"class": "-job"})
-    p2 = Process(target=get_job_detail(soup))
-    p2.start()
-    p2.join()
+    sop2 = Process(target=get_job_detail(soup))
+    sop2.start()
+    sop2.join()
 
 def get_jobs(jobs):
   for job in jobs:
@@ -39,9 +39,9 @@ def get_jobs(jobs):
       job_url=f"https://stackoverflow.com/jobs?q={job}&sort=i"
       soup=rs.requestWithUgerAgent(job_url)
       last_page=get_pagination(soup)
-      p1 = Process(target=extract_pages, args=(job_url,last_page))
-      p1.start()
-      p1.join()
+      sop1 = Process(target=extract_pages, args=(job_url,last_page))
+      sop1.start()
+      sop1.join()
       return job_list
     except:
       print("Here")
