@@ -1,9 +1,12 @@
-import tqdm
+from tqdm import tqdm
+from multiprocessing import Process,Manager
 import request_soup as rs
 
+manager = Manager()
+job_list = manager.list()
+
 def extract_jobs(soup):
-  jobs=[]
-  for job in soup:
+  for job in tqdm(soup):
     title = job.find('h3', {'itemprop':'name'}).text
     company = job.find('h2', {'itemprop':'title'}).text
     link = "https://remoteok.io" + job.find('a', {'class':'preventLink'})['href']
@@ -14,8 +17,7 @@ def extract_jobs(soup):
       'title': title,
       'link':f"https://weworkremotely.com{link}",
     }
-    jobs.append(job)
-  return jobs
+    job_list.append(job)
 
 
 def get_jobs(jobs):
@@ -23,7 +25,10 @@ def get_jobs(jobs):
     try:
       job_url= f'https://remoteok.com/remote-{job}-jobs'
       soup=rs.requestWithUgerAgent(job_url).find_all('tr', {'class':'job'})
-      return extract_jobs(soup)
+      p1 = Process(target=extract_jobs, args=(soup,))
+      p1.start()
+      p1.join()
+      return job_list
     except:
       return []
 

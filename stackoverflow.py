@@ -1,4 +1,3 @@
-import time
 from tqdm import tqdm
 from multiprocessing import Process,Manager
 import request_soup as rs
@@ -37,14 +36,12 @@ def extract_pages(job_url,last_page):
 def get_jobs(jobs):
   for job in jobs:
     try:
-      start_time = time.time()
       job_url=f"https://stackoverflow.com/jobs?q={job}&sort=i"
       soup=rs.requestWithUgerAgent(job_url)
       last_page=get_pagination(soup)
       p1 = Process(target=extract_pages, args=(job_url,last_page))
       p1.start()
       p1.join()
-      print("--- %s seconds ---" % (time.time() - start_time))
       return job_list
     except:
       print("Here")

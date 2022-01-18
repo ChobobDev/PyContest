@@ -1,3 +1,4 @@
+import time
 from flask import Flask,render_template,request
 import stackoverflow as so
 import weworkremotely as wwr
@@ -10,6 +11,7 @@ def result():
         job_name = request.form['job_name']
         selected_site=request.form.getlist('Site')
     jobs=[]
+    start_time = time.time()
     for site in selected_site:
         if site=="so":
             jobs.extend(so.get_jobs([job_name]))
@@ -22,6 +24,7 @@ def result():
         if "number" not in job:
             job["number"]=n
         n+=1
+    print("--- %s seconds ---" % (time.time() - start_time))
     return render_template('result.html',jobs=jobs)
 
 
