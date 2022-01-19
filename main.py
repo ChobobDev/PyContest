@@ -37,17 +37,11 @@ def ro_site(language):
 def so_site(language):
     return language+"so"
 
-@app.route('/result/language=<language>')
+@app.route('/result/language=<language>',methods=['GET','POST'])
 def all_site(language):
-    return language
-
-@app.route("/result",methods=['GET','POST'])
-def result():
-    if request.method == 'POST':
-        job_name = request.form['job_name']
-        selected_site=request.form.getlist('Site')
+    jobs=sc.scrape_all(language)
+    print(len(jobs))
     return render_template('result.html',jobs=jobs)
-
 
 @app.route("/",methods=['GET','POST'])
 def home():

@@ -132,3 +132,46 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   overflow: hidden;
   border-top: none;
 }
+
+.job-rank-green{
+  list-style: none;
+  white-space: nowrap;
+  float: left;
+  line-height: 68px;
+  width: 55px;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: oblique;
+  text-align: center;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  color: #1ab80c;
+}
+
+.language-image{
+  list-style: none;
+  white-space: nowrap;
+  float: left;
+  height: 56px;
+  padding: 6px 0 0;
+  margin-right: 20px;
+  width: 100px;
+  line-height: 56px;
+  text-align: center;
+  margin-bottom: 6px;
+  overflow: hidden;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}
+
+.item-title{
+  list-style: none;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 14px;
+  line-height: 17px;
+  font-size: 14px;
+  color: #000;
+  font-weight: 300;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}

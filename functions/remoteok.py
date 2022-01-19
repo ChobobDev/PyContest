@@ -28,7 +28,9 @@ def get_jobs(jobs):
       rop1 = Process(target=extract_jobs, args=(soup,))
       rop1.start()
       rop1.join()
-      return job_list
+      temp_list=job_list
+      job_list=[]
+      return temp_list
     except:
       return []
 

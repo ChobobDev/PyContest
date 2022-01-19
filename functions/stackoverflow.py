@@ -42,7 +42,9 @@ def get_jobs(jobs):
       sop1 = Process(target=extract_pages, args=(job_url,last_page))
       sop1.start()
       sop1.join()
-      return job_list
+      temp_list=job_list
+      job_list=[]
+      return temp_list
     except:
       print("Here")
       return []

@@ -11,3 +11,10 @@ def scrape_selected(job_name,site):
         if site=="ro":
             jobs.extend(ro.get_jobs([job_name]))
     print("--- %s seconds ---" % (time.time() - start_time))
+
+def scrape_all(job_name):
+    jobs=[]
+    jobs.extend(so.get_jobs([job_name]))
+    jobs.extend(wwr.get_jobs([job_name]))
+    jobs.extend(ro.get_jobs([job_name]))
+    return jobs

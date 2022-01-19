@@ -5,6 +5,7 @@ from functions import request_soup as rs
 manager = Manager()
 job_list = manager.list()
 
+
 def extract_jobs(soup):
   for job in tqdm(soup):
     table = job.find_all('li')
@@ -30,7 +31,9 @@ def get_jobs(jobs):
       wwrp1 = Process(target=extract_jobs, args=(soup,))
       wwrp1.start()
       wwrp1.join()
-      return job_list
+      temp_list=job_list
+      job_list=[]
+      return temp_list
     except:
       return []
 
