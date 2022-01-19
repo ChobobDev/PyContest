@@ -1,6 +1,6 @@
 from tqdm import tqdm
 from multiprocessing import Process,Manager
-import request_soup as rs
+from functions import request_soup as rs
 
 manager = Manager()
 job_list = manager.list()

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <div id="loading" style="display:none;"><img src="/static/img/loading.gif" alt="" class="center"/></div>
     <div class="wrap">
         <header class="header">
             <div>
@@ -22,10 +23,11 @@
                 <!-- StackOverflow <input type="checkbox" value="so" name="Site">
                 WeWorkRemotely <input type="checkbox" value="wwr" name="Site">
                 RemoteOK<input type="checkbox" value="ro" name="Site"> -->
-                <input type="text" size = "35" class="job-search-box" name="job_name" placeholder= "Type Language You would like to Apply">
+                <input type="text" size = "35" id="job-search-box" class="job-search-box" name="job_name" placeholder= "Type Language You would like to Apply">
                 <button type="submit" class="job-search-button" onclick="$('#loading').show();">
                     <i class="button-style"></i>
                 </button>
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
             </form>   
         </div>
         <div class="job-best">
@@ -34,7 +36,13 @@
             </div>
             <div class="job-best-contents-left">
                 <ul class="job-best-list">
-
+                    <li class="job-best-list-item">
+                        <form method="POST" action="/result">
+                            <div type="submit">
+                                
+                            </div>
+                        </form>
+                    </li>
                 </ul>
 
             </div>
@@ -45,7 +53,6 @@
     </div>
    
     
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <div id="loading" style="display:none;"><img src="/static/img/loading.gif" alt="" class="center"/></div>
+    
 </body>
 </html>
