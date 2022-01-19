@@ -1,8 +1,134 @@
-html,body {cursor: url("https://user-images.githubusercontent.com/32432141/149954575-279614c7-04af-497a-a8fc-5e4d29a8e42b.png"), auto;}
-input,a { cursor: url("/static/img/onCursor.png"), auto;}
+body {cursor: url("/static/img/Cursor.png"), auto;}
+button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
   }
+  
+  .job-search-form{
+   
+    position: relative;
+    width: 624px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+
+  .job-search-box{
+    font-family: inherit;
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 15px 150px 18px 17px;
+    background: none;
+    border: none;
+    line-height: 17px;
+    font-size: 14px;
+    color: #9b9b9b;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .job-search-button{
+   
+    font-size: 100%;
+    line-height: normal;
+    text-transform: none;
+    -webkit-appearance: button;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px 10px 0 0;
+    height: 30px;
+    padding: 0;
+    border: none;
+   
+  }
+
+  .button-style{
+    font-size: 100%;
+    line-height: normal;
+    text-transform: none;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -99999px;
+    background-image: url(/static/img/Cursor.png);
+    background-position: -90px -797px;
+    width: 50px;
+    height: 30px;
+  }
+
+  .container{
+    position: relative;
+    min-height: 700px;
+    padding-bottom: 120px;
+    width: 1080px;
+    margin: 0 auto;
+  }
+
+
+  .index-logo{
+    width: 624px;
+    margin: 0 auto;
+    border-radius: 2px;
+    text-align:center;
+  }
+
+
+  .wrap{
+    min-width: 1080px;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #5383e8;
+   
+  }
+
+.job-best{
+  margin-top: 30px;
+  min-height: 396px;
+  background: #fff;
+  border: solid 1px #e9eff4;
+}
+
+.job-best-header{
+  border-bottom: 1px solid #f0f0f0;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}
+
+.job-best-contents-left{
+  width: 50%;
+  float: left;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}
+
+.job-best-contents-right{
+  width: 50%;
+  float: right;
+  border-left: 1px solid #f0f0f0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}
+
+.job-best-list{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.job-best-list-item{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-top: none;
+}
