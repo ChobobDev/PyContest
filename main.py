@@ -1,5 +1,7 @@
+import asyncio
 from flask import Flask,render_template,request,redirect
-from functions import scrape as sc
+from functions import utils as ut
+
 app = Flask(__name__)
 @app.route('/result/language=<language>&wwr&so')
 def so_wwr_redirect(language):
@@ -39,7 +41,7 @@ def so_site(language):
 
 @app.route('/result/language=<language>',methods=['GET','POST'])
 def all_site(language):
-    jobs=sc.scrape_all(language)
+    asyncio.run(ut.scrape_all(language))
     print(len(jobs))
     return render_template('result.html',jobs=jobs)
 

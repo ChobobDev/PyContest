@@ -1,4 +1,4 @@
-from functions import request_soup as rs
+from functions import utils as ut
 
 def get_pagination(soup):
   pagination = soup.find("div", class_="s-pagination").find_all("a")
@@ -28,12 +28,11 @@ def extract_pages(job_url,last_page):
     jobs.extend(get_job_detail(soup))
   return jobs
 
-def get_jobs(jobs):
+async def get_jobs(job):
   try:
       job_url=f"https://stackoverflow.com/jobs?q={job}&pg=i"
-      soup=rs.requestWithUgerAgent(job_url)
+      soup= await ut.requestWithUgerAgent(job_url)
       last_page=get_pagination(soup)
-      print(last_page)
       return extract_pages(job_url,last_page)
   except:
     print("Here")

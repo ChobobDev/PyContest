@@ -1,31 +1,28 @@
-from tqdm import tqdm
-from functions import request_soup as rs
+from functions import utils as ut
 
 def extract_jobs(soup):
   jobs=[]
-  print("WeWorkRemotely")
-  for job in tqdm(soup):
-    table = job.find_all('li')
-    for j in table[:-1]:
-      title = j.find('span',{'class':'title'}).text
-      company = j.find('span', {'class':'company'}).text
-      link=j.find_all('a')[1]['href']
-      job = {
-        'site': "WeWorkRemotely",
-        'company':company,
-        'location':"N/A",
-        'title': title,
-        'link':f"https://weworkremotely.com{link}",
-      }
-      jobs.append(job)
+  for job in soup:
+    title = job.find("span", {"class": "title"}).get_text().strip()
+    company = job.find("span", {"class": "company"}).get_text().strip()
+    location = job.find("span", {"class": "region company"}).get_text().strip()
+    link = "https://weworkremotely.com/" + job.find("a")["href"]
+    job = {
+      'site': "WeWorkRemotely",
+      'company':company,
+      'location':location,
+      'title': title,
+      'link':link,
+    }
+    print(job)
+    jobs.append(job)
   return jobs
 
 
-def get_jobs(jobs):
-  for job in jobs:
-    try:
-      job_url=f"https://weworkremotely.com/remote-jobs/search?term={job}"
-      soup = rs.requestWithUgerAgent(job_url).find_all('section', {'class':'jobs'})
-      return extract_jobs(soup)
-    except:
-      return []
+async def get_jobs(job):
+  try:
+    job_url=f"https://weworkremotely.com/remote-jobs/search?term={job}"
+    soup = await ut.requestWithUgerAgent(job_url).find_all("li", {"class": "feature"})  
+    return extract_jobs(soup)
+  except:
+    return []
