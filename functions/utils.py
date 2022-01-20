@@ -9,9 +9,22 @@ def requestWithUgerAgent(url):
     return soup
 
 def scrape_all(job_name):
-    
-    so_job = asyncio.run(so.get_jobs(job_name)) 
-    wwr_job = asyncio.run(wwr.get_jobs(job_name))
-    ro_job = asyncio.run(ro.get_jobs(job_name))
-    jobs=so_job+wwr_job+ro_job
-    return jobs
+    return asyncio.run(so.get_jobs(job_name))+asyncio.run(wwr.get_jobs(job_name))+asyncio.run(ro.get_jobs(job_name))
+
+def scrape_so(job_name):
+    return asyncio.run(so.get_jobs(job_name)) 
+
+def scrape_wwr(job_name):
+    return asyncio.run(wwr.get_jobs(job_name)) 
+
+def scrape_ro(job_name):
+    return asyncio.run(ro.get_jobs(job_name))
+
+def scrape_so_wwr(job_name):
+    return asyncio.run(so.get_jobs(job_name))+asyncio.run(wwr.get_jobs(job_name))
+
+def scrape_so_ro(job_name):
+    return asyncio.run(so.get_jobs(job_name))+asyncio.run(ro.get_jobs(job_name))
+
+def scrape_wwr_ro(job_name):
+    return asyncio.run(wwr.get_jobs(job_name))+asyncio.run(ro.get_jobs(job_name))
