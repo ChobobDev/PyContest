@@ -14,12 +14,10 @@ def scrape_selected(job_name,site):
 
 def scrape_all(job_name):
     jobs=[]
-    jobs.extend(so.get_jobs([job_name]))
-    jobs.extend(wwr.get_jobs([job_name]))
-    jobs.extend(ro.get_jobs([job_name]))
+    print("HERE - SO")
+    jobs.extend(so.get_jobs(job_name))
+    print("HERE - WWR")
+    jobs.extend(wwr.get_jobs(job_name))
+    print("HERE - RO")
+    jobs.extend(ro.get_jobs(job_name))
     return jobs
-
-def clear_all():
-    so.reset_memory()
-    wwr.reset_memory()
-    ro.reset_memory()

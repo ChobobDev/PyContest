@@ -1,12 +1,8 @@
 from tqdm import tqdm
-from multiprocessing import Process,Manager
 from functions import request_soup as rs
 
-manager = Manager()
-job_list = manager.list()
-
-
 def extract_jobs(soup):
+  jobs=[]
   print("WeWorkRemotely")
   for job in tqdm(soup):
     table = job.find_all('li')
@@ -21,7 +17,8 @@ def extract_jobs(soup):
         'title': title,
         'link':f"https://weworkremotely.com{link}",
       }
-      job_list.append(job)
+      jobs.append(job)
+  return jobs
 
 
 def get_jobs(jobs):
@@ -29,12 +26,6 @@ def get_jobs(jobs):
     try:
       job_url=f"https://weworkremotely.com/remote-jobs/search?term={job}"
       soup = rs.requestWithUgerAgent(job_url).find_all('section', {'class':'jobs'})
-      wwrp1 = Process(target=extract_jobs, args=(soup,))
-      wwrp1.start()
-      wwrp1.join()
-      return job_list
+      return extract_jobs(soup)
     except:
       return []
-
-def reset_memory():
-  job_list[:]=[]
