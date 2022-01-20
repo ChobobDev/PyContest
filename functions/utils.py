@@ -1,4 +1,4 @@
-import requests
+import requests,asyncio
 from bs4 import BeautifulSoup
 from functions import stackoverflow as so ,weworkremotely as wwr,remoteok as ro
 
@@ -8,17 +8,10 @@ def requestWithUgerAgent(url):
     soup = BeautifulSoup(requests.get(url, headers=headers).text, "html.parser")
     return soup
 
-async def scrape_all(job_name):
-    jobs=[]
-    print("HERE - SO")
-    so_job = asyncio.create_task(so.get_jobs(job_name)) 
-    await so_job
-    jobs.extend(so_job.result())
-    print("HERE - WWR")
-    wwr_job = asyncio.create_task(wwr.get_jobs(job_name))
-    await wwr_job
-    jobs.extend(wwr_job.result())
-    print("HERE - RO")
-    ro_job = asyncio.create_task(ro.get_jobs(job_name))
-    await ro_job
-    jobs.extend(ro_job.result())
+def scrape_all(job_name):
+    
+    so_job = asyncio.run(so.get_jobs(job_name)) 
+    wwr_job = asyncio.run(wwr.get_jobs(job_name))
+    ro_job = asyncio.run(ro.get_jobs(job_name))
+    jobs=so_job+wwr_job+ro_job
+    return jobs

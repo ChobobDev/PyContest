@@ -1,3 +1,4 @@
+import asyncio
 from functions import utils as ut
 
 def get_pagination(soup):
@@ -24,18 +25,19 @@ def get_job_detail(jobs_table):
 def extract_pages(job_url,last_page):
   jobs=[]
   for page in range(1,last_page+1):
-    soup=rs.requestWithUgerAgent(f"{job_url}&pg={page}").find_all("div", {"class": "-job"})
+    soup=ut.requestWithUgerAgent(f"{job_url}&pg={page}").find_all("div", {"class": "-job"})
     jobs.extend(get_job_detail(soup))
   return jobs
 
 async def get_jobs(job):
   try:
       job_url=f"https://stackoverflow.com/jobs?q={job}&pg=i"
-      soup= await ut.requestWithUgerAgent(job_url)
+      soup= ut.requestWithUgerAgent(job_url)
       last_page=get_pagination(soup)
+      await asyncio.sleep(1)
       return extract_pages(job_url,last_page)
-  except:
-    print("Here")
+  except Exception as e:
+    print(e)
     return []
 
     

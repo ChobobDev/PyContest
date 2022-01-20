@@ -14,7 +14,6 @@ def extract_jobs(soup):
       'title': title,
       'link':link,
     }
-    print(job)
     jobs.append(job)
   return jobs
 
@@ -22,7 +21,7 @@ def extract_jobs(soup):
 async def get_jobs(job):
   try:
     job_url=f"https://weworkremotely.com/remote-jobs/search?term={job}"
-    soup = await ut.requestWithUgerAgent(job_url).find_all("li", {"class": "feature"})  
+    soup = ut.requestWithUgerAgent(job_url).find_all("li", {"class": "feature"})  
     return extract_jobs(soup)
   except:
     return []

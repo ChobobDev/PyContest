@@ -1,8 +1,10 @@
 import asyncio
+from distutils.log import debug
 from flask import Flask,render_template,request,redirect
 from functions import utils as ut
 
 app = Flask(__name__)
+
 @app.route('/result/language=<language>&wwr&so')
 def so_wwr_redirect(language):
     return redirect(f"/result/language={language}&so&wwr")
@@ -41,8 +43,8 @@ def so_site(language):
 
 @app.route('/result/language=<language>',methods=['GET','POST'])
 def all_site(language):
-    asyncio.run(ut.scrape_all(language))
-    print(len(jobs))
+    jobs=[]
+    jobs=ut.scrape_all(language)
     return render_template('result.html',jobs=jobs)
 
 @app.route("/",methods=['GET','POST'])
@@ -51,4 +53,4 @@ def home():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug="on")
