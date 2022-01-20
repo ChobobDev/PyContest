@@ -6,6 +6,7 @@ manager = Manager()
 job_list = manager.list()
 
 def extract_jobs(soup):
+  print("Remote Ok")
   for job in tqdm(soup):
     title = job.find('h3', {'itemprop':'name'}).text
     company = job.find('h2', {'itemprop':'title'}).text
@@ -15,7 +16,7 @@ def extract_jobs(soup):
       'company':company,
       'location':"N/A",
       'title': title,
-      'link':f"https://weworkremotely.com{link}",
+      'link':f"{link}",
     }
     job_list.append(job)
 
@@ -28,9 +29,9 @@ def get_jobs(jobs):
       rop1 = Process(target=extract_jobs, args=(soup,))
       rop1.start()
       rop1.join()
-      temp_list=job_list
-      job_list=[]
-      return temp_list
+      return job_list
     except:
       return []
 
+def reset_memory():
+  job_list[:]=[]

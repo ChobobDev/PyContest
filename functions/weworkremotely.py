@@ -7,6 +7,7 @@ job_list = manager.list()
 
 
 def extract_jobs(soup):
+  print("WeWorkRemotely")
   for job in tqdm(soup):
     table = job.find_all('li')
     for j in table[:-1]:
@@ -31,9 +32,9 @@ def get_jobs(jobs):
       wwrp1 = Process(target=extract_jobs, args=(soup,))
       wwrp1.start()
       wwrp1.join()
-      temp_list=job_list
-      job_list=[]
-      return temp_list
+      return job_list
     except:
       return []
 
+def reset_memory():
+  job_list[:]=[]

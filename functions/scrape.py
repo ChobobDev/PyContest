@@ -18,3 +18,8 @@ def scrape_all(job_name):
     jobs.extend(wwr.get_jobs([job_name]))
     jobs.extend(ro.get_jobs([job_name]))
     return jobs
+
+def clear_all():
+    so.reset_memory()
+    wwr.reset_memory()
+    ro.reset_memory()

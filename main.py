@@ -39,6 +39,7 @@ def so_site(language):
 
 @app.route('/result/language=<language>',methods=['GET','POST'])
 def all_site(language):
+    sc.clear_all()
     jobs=sc.scrape_all(language)
     print(len(jobs))
     return render_template('result.html',jobs=jobs)
