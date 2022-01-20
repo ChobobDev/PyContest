@@ -175,3 +175,113 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   font-weight: 300;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
 }
+
+.image-banner{
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  display: none;
+  height: 90px;
+  background-color: #1d1a1a;
+  text-align: center;
+  font-size: 0;
+}
+
+.oojj-header{
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #5a5ed2;
+}
+
+.oojj-header_gnb{
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-content: flex-start;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  height: 40px;
+  padding-left: 98px;
+  background-color: #232f46;
+}
+
+.oojj-header_logo{
+  font-size: 2em;
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 98px;
+  background-color: #5383e8;
+}
+
+.oojj-header_logo_anchor{
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  border: 0;
+  word-break: keep-all;
+  text-decoration: none;
+  display: block;
+  padding: 12px 0 12px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0;
+  width: 100%;
+  height: 16px;
+
+}
+
+.nav-desktop{
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  font-size: 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+.nav-item nav-item-second{
+  -webkit-text-size-adjust: 100%;
+  --HSDSGlobalFontFamily: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --HSDSGlobalFontFamilyMono: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  --HSDSGlobalFontSize: 13px;
+  -webkit-box-direction: normal;
+  font-size: 0;
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  border: 0;
+  word-break: keep-all;
+  text-decoration: none;
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: middle;
+  margin: 4px;
+  padding: 0 8px;
+  color: #c3cbd1;
+}
