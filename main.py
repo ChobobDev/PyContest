@@ -1,5 +1,4 @@
 import asyncio
-from distutils.log import debug
 from flask import Flask,render_template,request,redirect
 from functions import utils as ut
 
@@ -47,7 +46,10 @@ def all_site(language):
 
 @app.route("/",methods=['GET','POST'])
 def home():
-    
+    if request.method == 'POST':
+        job_name = request.form['job_name']
+        # selected_site=request.form.getlist('Site')
+        return redirect(f"/result/language={job_name}")
     return render_template('index.html')
 
 if __name__ == "__main__":
