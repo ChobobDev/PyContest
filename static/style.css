@@ -1,12 +1,11 @@
-body {cursor: url("/static/img/Cursor.png"), auto;}
+html,body {cursor: url("/static/img/Cursor.png"), auto;}
 button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  
+
+.main-body{
+  font-family: sans-serif;
+  margin: 0;
+  height: 100%;
+}
   .job-search-form{
    
     position: relative;
@@ -214,7 +213,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   background-color: #5a5ed2;
 }
 
-.oojj-header_gnb{
+.oojj-header-gnb{
   font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
   margin: 0;
   padding: 0;
@@ -237,7 +236,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   background-color: #232f46;
 }
 
-.oojj-header_logo{
+.oojj-header-logo{
   font-size: 2em;
   font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
   margin: 0;
@@ -251,7 +250,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   background-color: #5383e8;
 }
 
-.oojj-header_logo_anchor{
+.oojj-header-logo-anchor{
   font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
   margin: 0;
   border: 0;
@@ -279,12 +278,34 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   overflow: hidden;
 }
 
-.nav-item nav-item-second{
-  -webkit-text-size-adjust: 100%;
-  --HSDSGlobalFontFamily: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --HSDSGlobalFontFamilyMono: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
-  --HSDSGlobalFontSize: 13px;
-  -webkit-box-direction: normal;
+.oojj-header-nav{
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-item{
+  font-size: 0;
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  border: 0;
+  word-break: keep-all;
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 12px 0 4px;
+  margin: 0;
+  color: #fff;
+  background-color: #5383e8;
+}
+
+.nav-item-course{
   font-size: 0;
   font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
   border: 0;
@@ -297,6 +318,19 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   margin: 4px;
   padding: 0 8px;
   color: #c3cbd1;
+}
+
+.nav-item span{ 
+  line-height: 40px;
+  color: #fff;
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  font-size: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 .l-footer{
@@ -315,3 +349,186 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   color: #fff;
 
 }
+
+.l-menu{
+  background: #5383e8;
+  height: 48px;
+  border-bottom: 1px solid #4171d6;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}
+
+.menu{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  padding: 0;
+  max-width: 1300px;
+  height: 48px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.menu-item{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-left: 24px;
+  height: 100%;
+  display: flex;
+  line-height: 19px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+
+.menu-item-active{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  display: flex;
+  line-height: 19px;
+  font-size: 15px;
+  box-sizing: border-box;
+  font-weight: 500;
+  margin-left: 0;
+}
+
+.menu-item-name{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  line-height: 19px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  padding: 13px 0;
+  color: #fff;
+  border-bottom-color: #fff;
+  padding-top: 13px;
+  padding-bottom: 9px;
+}
+
+.menu-item-name-not-active{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  line-height: 19px;
+  font-size: 15px;
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  color: #b3cdff;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  padding: 13px 0;
+  padding-top: 13px;
+  padding-bottom: 9px;
+}
+
+.menu-item-name-not-active:hover{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  line-height: 19px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  padding: 13px 0;
+  color: #fff;
+  border-bottom-color: #fff;
+  padding-top: 13px;
+  padding-bottom: 9px;
+}
+
+.menu-item-name-king{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  line-height: 19px;
+  font-size: 15px;
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  padding: 13px 0;
+  color: #00fede;
+  padding-top: 13px;
+  padding-bottom: 9px;
+}
+
+.menu-item-name-king:hover{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  line-height: 19px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  padding: 13px 0;
+  color: #fff;
+  border-bottom-color: #fff;
+  padding-top: 13px;
+  padding-bottom: 9px;
+}
+
+
+
+.icon{
+  font-size: 0;
+  line-height: 40px;
+  color: #fff;
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  max-width: 100%;
+  border: none;
+  width: 15px;
+  height: 12px;
+  vertical-align: middle;
+}
+
+.icon-course{
+  font-size: 0;
+  line-height: 40px;
+  color: #fff;
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  max-width: 100%;
+  border: none;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+
+.nav-item-course span{
+  line-height: 32px;
+  color: #c3cbd1;
+  font-family: Roboto,Noto sans kr,"Apple SD Gothic Neo",Malgun Gothic,sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  word-break: keep-all;
+  font-size: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+  position: relative;
+}
+
+
