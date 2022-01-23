@@ -49,23 +49,9 @@ def home():
     if request.method == 'POST':
         job_name = request.form['job_name']
         selected_site=request.form.get('site')
-        if selected_site=="all":
-            return redirect(f"/result/language={job_name}")
-        elif selected_site=="so":
-            return redirect(f"/result/language={job_name}&so")
-        elif selected_site=="wwr":
-            return redirect(f"/result/language={job_name}&wwr")
-        elif selected_site=="ro":
-            return redirect(f"/result/language={job_name}&ro")
-        elif selected_site=="sowwr":
-            return redirect(f"/result/language={job_name}&so&wwr")
-        elif selected_site=="soro":
-            return redirect(f"/result/language={job_name}&so&ro")
-        elif selected_site=="wwrro":
-            return redirect(f"/result/language={job_name}&wwr&ro")
-
-        
-        
+        url=ut.return_url(selected_site,job_name)
+        return(redirect(url))
+     
     return render_template('index.html')
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 import requests,asyncio
 from bs4 import BeautifulSoup
+from flask import redirect
 from functions import stackoverflow as so ,weworkremotely as wwr,remoteok as ro
 
 
@@ -28,3 +29,19 @@ def scrape_so_ro(job_name):
 
 def scrape_wwr_ro(job_name):
     return asyncio.run(wwr.get_jobs(job_name))+asyncio.run(ro.get_jobs(job_name))
+
+def return_url(selected_site,job_name):
+    if selected_site=="all":
+        return (f"/result/language={job_name}")
+    elif selected_site=="so":
+        return (f"/result/language={job_name}&so")
+    elif selected_site=="wwr":
+        return (f"/result/language={job_name}&wwr")
+    elif selected_site=="ro":
+        return (f"/result/language={job_name}&ro")
+    elif selected_site=="sowwr":
+        return (f"/result/language={job_name}&so&wwr")
+    elif selected_site=="soro":
+        return (f"/result/language={job_name}&so&ro")
+    elif selected_site=="wwrro":
+        return (f"/result/language={job_name}&wwr&ro")
