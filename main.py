@@ -48,7 +48,8 @@ def all_site(language):
 def home():
     if request.method == 'POST':
         job_name = request.form['job_name']
-        # selected_site=request.form.getlist('Site')
+        selected_site=request.form.get('site')
+        print(selected_site)
         return redirect(f"/result/language={job_name}")
     return render_template('index.html')
 

@@ -5,7 +5,12 @@
     <title>Gopher Job Scrapper</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
-<body class="main-body">
+<body class="main-body" onload="resetSelect();">
+    <script type="text/javascript">
+        function resetSelect(){
+            document.getElementById("select").selectedIndex = 0;
+        }
+    </script>
     <!-- <div id="loading" style="display:none;"><img src="/static/img/loading.gif" alt="" class="center"/></div> -->
     <div class="wrap">
         <header class="header">
@@ -89,14 +94,20 @@
                 </div>
             </div>
             <form class="job-search-form" method="POST" action="/">
-                <!-- StackOverflow <input type="checkbox" value="so" name="Site">
-                WeWorkRemotely <input type="checkbox" value="wwr" name="Site">
-                RemoteOK<input type="checkbox" value="ro" name="Site"> -->
                 <input type="text" size = "35" id="job-search-box" class="job-search-box" name="job_name" placeholder= "Type Language You would like to Apply">
-                <button type="submit" class="job-search-button" onclick="$('#loading').show();">
+                <button type="submit" class="job-search-button">
                     <i class="button-style"></i>
                 </button>
-                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+                <select class="search-setting" id="select" name="site">
+                    <option selected="selected" value="all">ALL</option>
+                    <option value="so">SO</option>
+                    <option value="wwr">WWR</option>
+                    <option value="ro">RO</option>
+                    <option value="sowrr">SO&WWR</option>
+                    <option value="soro">SO&RO</option>
+                    <option value="ro">WWR&RO</option>
+                </select>
             </form>
             <div class="job-best">
                 <div class="job-best-header">
