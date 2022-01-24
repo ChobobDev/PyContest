@@ -667,3 +667,18 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   vertical-align: top;
   line-height: 1.1;
 }
+
+.Information{
+  line-height: 1.1;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}
+
+.JobProfileName{
+  line-height: 1.1;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  color: #242929;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 4px;
+  vertical-align: middle;
+}
