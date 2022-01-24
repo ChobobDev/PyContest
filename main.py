@@ -18,31 +18,31 @@ def wwr_ro_redirect(language):
 
 @app.route('/result/language=<language>&wwr&ro')
 def wwr_ro_site(language):
-    return render_template('result.html',jobs=ut.scrape_wwr_ro(language))
+    return render_template('result.html',jobs=ut.scrape_wwr_ro(language),langlogo=f"/static/img/{language.lower()}-logo.png")
 
 @app.route('/result/language=<language>&so&ro')
 def so_ro_site(language):
-    return render_template('result.html',jobs=ut.scrape_so_ro(language))
+    return render_template('result.html',jobs=ut.scrape_so_ro(language),langlogo=f"/static/img/{language.lower()}-logo.png")
 
 @app.route('/result/language=<language>&so&wwr')
 def so_wwr_site(language):
-    return render_template('result.html',jobs=ut.scrape_so_wwr(language))
+    return render_template('result.html',jobs=ut.scrape_so_wwr(language),langlogo=f"/static/img/{language.lower()}-logo.png")
 
 @app.route('/result/language=<language>&wwr')
 def wwr_site(language):
-    return render_template('result.html',jobs=ut.scrape_wwr(language))
+    return render_template('result.html',jobs=ut.scrape_wwr(language),langlogo=f"/static/img/{language.lower()}-logo.png")
 
 @app.route('/result/language=<language>&ro')
 def ro_site(language):
-    return render_template('result.html',jobs=ut.scrape_ro(language))
+    return render_template('result.html',jobs=ut.scrape_ro(language),langlogo=f"/static/img/{language.lower()}-logo.png")
 
 @app.route('/result/language=<language>&so')
 def so_site(language):
-    return render_template('result.html',jobs=ut.scrape_so(language))
+    return render_template('result.html',jobs=ut.scrape_so(language),langlogo=f"/static/img/{language.lower()}-logo.png")
 
 @app.route('/result/language=<language>',methods=['GET','POST'])
 def all_site(language):
-    return render_template('result.html',jobs=ut.scrape_all(language))
+    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png")
 
 @app.route("/",methods=['GET','POST'])
 def home():

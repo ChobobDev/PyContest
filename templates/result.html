@@ -3,43 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <title>Gopher Job Scrapper</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <form method="POST" action="/result">
-        StackOverflow <input type="checkbox" value="so" name="Site">
-        WeWorkRemotely <input type="checkbox" value="wwr" name="Site">
-        RemoteOK<input type="checkbox" value="ro" name="Site">
-    </form>
-    <table id="table">
-        <thead class="border-b-2 border-gray-800">
-            <tr>
-                <th class="text-left number">#</th>
-                <th class="text-left site">site</th>
-                <th class="text-left company">company</th>
-                <th class="text-left location">location</th>
-                <th class="text-left title">title</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for job in jobs %}
-            <tr>
-                <td class="td number">{{loop.index}}
-                    <div class="filter"></div>
-                </td>
-                <td class="td site">{{job.site}}</td>
-                <td class="td company">
-                    <a href={{job.link}}>
-                        <div style="height:100%;width:100%">
-                            {{job.company}}
+    <div class="main-body" class="wrap">
+        <header class="header">
+            <div class="image-banner">
+
+            </div>
+            <div class="oojj-header">
+                <div class="oojj-header-gnb">
+                    <h1 class="oojj-header-logo">
+                        <a class="oojj-header-logo-anchor" height="16" width="65"></a>
+                    </h1>
+                    <nav class="oojj-header-nav">
+                        <div class="nav-desktop">
+                            <div class="nav-item">
+                                <img class="icon" src="/static/img/nomad_m.svg">
+                                <span>Nomad Courses</span>
+                            </div>
+                            <a class="nav-item-course" href="https://nomadcoders.co/carrot-market/">
+                                <img class="icon-course" src="/static/img/daggn.svg">
+                                <span>Karrot Market</span>
+                            </a>
+                            <a class="nav-item-course" href="https://nomadcoders.co/instaclone">
+                                <img class="icon-course" src="/static/img/Instagram.svg">
+                                <span>Ninstsgram</span>
+                            </a>
+                            <a class="nav-item-course" href="https://nomadcoders.co/airbnb-clone">
+                                <img class="icon-course" src="/static/img/airbnb.svg">
+                                <span>NomadBnB</span>
+                            </a>
+                            <a class="nav-item-course" href="https://nomadcoders.co/wetube">
+                                <img class="icon-course" src="/static/img/youtube.svg">
+                                <span>Wetube</span>
+                            </a>
+                            <a class="nav-item-course" href="https://nomadcoders.co/wetube">
+                                <img class="icon-course" src="/static/img/kakaotalk.svg">
+                                <span>Cocoa Talk</span>
+                            </a>
+                            <a class="nav-item-course" href="https://nomadcoders.co/wetube">
+                                <img class="icon-course" src="/static/img/netflix.svg">
+                                <span>Nomflix</span>
+                            </a>
+                            <a class="nav-item-course" href="https://nomadcoders.co/go-for-beginners">
+                                <img class="icon-course" src="/static/img/go-logo.svg">
+                                <span>Go Lang</span>
+                            </a>
+                            <a class="nav-item-course" href="https://nomadcoders.co/go-for-beginners">
+                                <img class="icon-course" src="/static/img/python.svg">
+                                <span>Python</span>
+                            </a>
                         </div>
-                      </a>
-                </td>
-                <td class="td location">{{job.location}}</td>
-                <td class="td title">{{job.title}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="l-menu">
+            <ul class="menu">
+                <li class="menu-item-active">
+                    <a href="/" class="menu-item-name-not-active"> HOME </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/" class="menu-item-name-not-active"> ARTHUR </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/" class="menu-item-name-king"> N.I.C.O </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/" class="menu-item-name-king"> L.Y.N.N </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/" class="menu-item-name-not-active"> MIZZU </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="container">
+            <div class="JobLayoutWrap">
+                <div class="JobLayout">
+                    <div class="JobLayoutHeader">
+                        <div class="Face">
+                            <div class="ProfileIcon">
+                                <img src={{langlogo}}  onerror="this.src='/static/img/logo.png'" class="ProfileImage"/>
+                                <span class="Level" title>100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="JobItemList">
+                        <div class="JobItemWrap">
+                            {% for job in jobs %}
+                            <div class="JobContents">
+                                <div class="sitename">
+                                    {{job.site}}
+                                </div>
+                                
+                                {{job.company}}
+                                {{job.location}}
+                                {{job.title}}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div> -->
+            </div>
+           
+        </div>
+        
+        <!-- <table id="table">
+            <thead class="border-b-2 border-gray-800">
+                <tr>
+                    <th class="text-left number">#</th>
+                    <th class="text-left site">site</th>
+                    <th class="text-left company">company</th>
+                    <th class="text-left location">location</th>
+                    <th class="text-left title">title</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in jobs %}
+                <tr>
+                    <td class="td number">{{loop.index}}
+                        <div class="filter"></div>
+                    </td>
+                    <td class="td site">{{job.site}}</td>
+                    <td class="td company">
+                        <a href={{job.link}}>
+                            <div style="height:100%;width:100%">
+                                {{job.company}}
+                            </div>
+                          </a>
+                    </td>
+                    <td class="td location">{{job.location}}</td>
+                    <td class="td title">{{job.title}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+         -->
+    </div>
 </body>
 </html>
