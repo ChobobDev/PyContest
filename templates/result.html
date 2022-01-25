@@ -157,31 +157,35 @@
                                             <div class="JobItemWrap">
                                                 <div class="JobItem">
                                                     {% if job.site=="StackOverflow" %}
-                                                        <div class="JobContents-so">
+                                                        <div class="JobContents-yellow">
                                                             <div class="CardSitename">
-                                                                {{job.site}}
+                                                                <div class="CardSitename-grid">
+                                                                    {{job.site}}
+                                                                </div>
                                                             </div>
                                                             <div class="CardSiteLogo">
                                                                 <div class="CardLogoImage">
                                                                     <img class="LogoRound"src="/static/img/so-logo.png"> 
                                                                 </div>
                                                             </div>
-                                                            <div>
-                                                                {{jobs.title}}
+                                                            <div class="CardCompany">
+                                                                {{job.company}}
                                                             </div>
-                                                            <div>
-                                                                {{jobs.location}}
+                                                            <div class="CardTitle">
+                                                                {{job.title}}
                                                             </div>
-                                                          
+                                                            <div class="CardLocation">
+                                                                {{job.location}}
+                                                            </div>
                                                         </div>
                                                     {% elif job.site=="WeWorkRemotely" %}
-                                                        <div class="JobContents-wwr">
+                                                        <div class="JobContents-yellow">
                                                             <div class="Cardsitename">
                                                                 {{job.site}}
                                                             </div>
                                                         </div>
                                                     {% else %}
-                                                        <div class="JobContents-ro">
+                                                        <div class="JobContents-yellow">
                                                             <div class="Cardsitename">
                                                                 {{job.site}}
                                                             </div>

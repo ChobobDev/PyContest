@@ -660,8 +660,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   padding: 11px 14px 10px;
   border-radius: 2px;
   font-size: 14px;
-  border: 1px solid #1a78ae;
-  background: #1f8ecd;
+  border: 1px solid #285a83;
+  background: #3478AE;
   color: #f2f2f2;
   margin: 0 6px 6px 0;
   position: relative;
@@ -678,8 +678,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   color: #f2f2f2;
   font-size: 14px;
   line-height: 17px;
-  background: #955dff;
-  border: solid 1px #6833d5;
+  background: #FFD340;
+  border: solid 1px #ffcd28;
   padding-right: 35px;
   margin: 0 6px 6px 0;
 }
@@ -789,53 +789,63 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 
-.JobContents-so{
+.JobContents-yellow{
   font-size: 12px;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   display: table;
   width: 689px;
-  border-collapse: collapse;
-  border: 1px solid #cdd2d2;
+  border: 2px solid #cdd2d2;
+  border-radius: 5px;
   table-layout: fixed;
-  background-color: #FFD281;
-  border-color: #FFC04C;
+  border-color: #FFD340;
+}
+.JobContents-yellow:hover{
+  border-color: #3478AE;
 }
 
-.JobContents-wwr{
-  font-size: 12px;
-  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
-  display: table;
-  width: 689px;
-  border-collapse: collapse;
-  border: 1px solid #cdd2d2;
-  table-layout: fixed;
-  background-color: #e2b6b3;
-  border-color: #cea7a7;
+.JobContents-yellow::before,
+.JobContents-yellow::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  border-radius: 5px;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .3s;
+}
+.JobContents-yellow::before {
+  background: #ffe694;
+}
+.JobContents-yellow::after {
+  background: #fcde7c;
+}
+.JobContents-yellow:hover::before,
+.JobContents-yellow:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+.JobContents-yellow:hover::after {
+  transition-delay: .3s;
 }
 
-.JobContents-ro{
-  font-size: 12px;
-  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
-  display: table;
-  width: 689px;
-  border-collapse: collapse;
-  border: 1px solid #cdd2d2;
-  table-layout: fixed;
-  background-color: #a3cfec;
-  border-color: #99b9cf;
-}
 
 .CardSitename{
+  position: absolute;
   border-collapse: collapse;
+}
+.CardSitename-grid{
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   display: table-cell;
   height: 96px;
   vertical-align: middle;
-  width: 70px;
   text-align: center;
   font-size: 11px;
   color: #555;
-  width: 100px;
+  width: 90px;
   line-height: 16px;
 }
 
@@ -846,7 +856,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   display: table-cell;
   height: 96px;
   vertical-align: middle;
-  width: 100px;
+  width: 46px;
   font-size: 0;
 }
 
@@ -864,7 +874,6 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 
 .LogoRound{
-
   border-collapse: collapse;
   font-size: 0;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
@@ -873,5 +882,37 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   display: block;
   width: 100%;
   height: 100%;
-  background: #000;
+}
+
+.CardCompany{
+  border-collapse: collapse;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  display: table-cell;
+  height: 96px;
+  vertical-align: middle;
+  font-size: 11px;
+  text-align: center;
+}
+
+.CardTitle{
+  border-collapse: collapse;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  display: table-cell;
+  height: 96px;
+  vertical-align: middle;
+  width: 200px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 18px;
+  color: #555e5e;
+}
+
+.CardLocation{
+  border-collapse: collapse;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  display: table-cell;
+  height: 96px;
+  vertical-align: middle;
+  font-size: 11px;
+  color: #555e5e;
 }
