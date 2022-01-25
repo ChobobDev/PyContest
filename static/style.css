@@ -805,6 +805,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .JobContents-yellow::before,
 .JobContents-yellow::after {
+  box-sizing: content-box;
+  margin-right: -2px;
   position: absolute;
   top: 0;
   right: 0;
@@ -845,7 +847,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   text-align: center;
   font-size: 11px;
   color: #555;
-  width: 90px;
+  width: 100px;
   line-height: 16px;
 }
 
@@ -908,6 +910,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 .CardLocation{
+  padding-left: 3px;
   border-collapse: collapse;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   display: table-cell;
