@@ -133,35 +133,72 @@
                                 </a>
                                 <button class="PurpleButtons">
                                     "Export"
-                                    <img class="PurpleFriend" src="/static/img/logo.png" >
+                                    <img class="PurpleFriend" src="/static/img/download.svg" >
                                 </button>
                             </div>             
                         </div>
                     </div>
                     <div class="JobMenu">
-                        <div class="JobMenuList">
-                            
-                        </div>
+                        <dl class="JobMenuList">
+                            <dd class="JobTabHeader">
+                                <span class="JobTabHeaderText">
+                                    Jobs
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="JobContentsWrap">
+                        <div class="TabItemContents">
+                            <div class="JobRenderContents">
+                                <div class="JobListContainer">
+                                    <div class="JobContents">
+                                        <div class="JobItemList">
+                                            {% for job in jobs %}
+                                            <div class="JobItemWrap">
+                                                <div class="JobItem">
+                                                    {% if job.site=="StackOverflow" %}
+                                                        <div class="JobContents-so">
+                                                            <div class="CardSitename">
+                                                                {{job.site}}
+                                                            </div>
+                                                            <div class="CardSiteLogo">
+                                                                <div class="CardLogoImage">
+                                                                    <img class="LogoRound"src="/static/img/so-logo.png"> 
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                {{jobs.title}}
+                                                            </div>
+                                                            <div>
+                                                                {{jobs.location}}
+                                                            </div>
+                                                          
+                                                        </div>
+                                                    {% elif job.site=="WeWorkRemotely" %}
+                                                        <div class="JobContents-wwr">
+                                                            <div class="Cardsitename">
+                                                                {{job.site}}
+                                                            </div>
+                                                        </div>
+                                                    {% else %}
+                                                        <div class="JobContents-ro">
+                                                            <div class="Cardsitename">
+                                                                {{job.site}}
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
 
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- <div class="JobItemList">
-                        <div class="JobItemWrap">
-                            {% for job in jobs %}
-                            <div class="JobContents">
-                                <div class="sitename">
-                                    {{job.site}}
-                                </div>
-                                
-                                {{job.company}}
-                                {{job.location}}
-                                {{job.title}}
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div> -->
             </div>
-           
         </div>
         
         <!-- <table id="table">
