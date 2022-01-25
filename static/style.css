@@ -682,3 +682,83 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   margin-right: 4px;
   vertical-align: middle;
 }
+
+.SiteButtons{
+  line-height: 1.1;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 0;
+  margin: 15px 0 -6px;
+  white-space: nowrap;
+}
+
+.BlueSiteButtons{
+  white-space: nowrap;
+  line-height: normal;
+  text-transform: none;
+  text-align: center;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  padding: 11px 14px 10px;
+  border-radius: 2px;
+  font-size: 14px;
+  border: 1px solid #1a78ae;
+  background: #1f8ecd;
+  color: #f2f2f2;
+  margin: 0 6px 6px 0;
+  position: relative;
+}
+
+a-button{
+  text-decoration: none;
+}
+
+.PurpleButtons{
+  white-space: nowrap;
+  text-transform: none;
+  text-align: center;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  padding: 11px 14px 10px;
+  border-radius: 2px;
+  position: relative;
+  color: #f2f2f2;
+  font-size: 14px;
+  line-height: 17px;
+  background: #955dff;
+  border: solid 1px #6833d5;
+  padding-right: 40px;
+  margin: 0 6px 6px 0;
+}
+
+.PurpleFriend{
+  white-space: nowrap;
+  text-transform: none;
+  text-align: center;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  color: #f2f2f2;
+  font-size: 14px;
+  line-height: 17px;
+  border: 0;
+  position: absolute;
+  height: 34px;
+  bottom: 0;
+  right: 0;
+}
+
+.JobMenu{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  border-bottom: 1px solid #c6cbcb;
+  margin-top: 25px;
+}
+
+.JobMenuList{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  list-style: none;
+  width: 1000px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 0;
+}

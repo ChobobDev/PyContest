@@ -31,5 +31,5 @@ def scrape_wwr_ro(job_name):
     return asyncio.run(wwr.get_jobs(job_name))+asyncio.run(ro.get_jobs(job_name))
 
 def return_url(selected_site,job_name):
-    site ={"all":"","so":"&so","wwr":"&wwr","ro":"&ro","sowwr":"&so&wwr","soro":"&so&ro","wwrro":"&wwr&ro"}
-    return(f"/result/language={job_name}{site[selected_site]}")
+    site ={"all":"all","so":"so","wwr":"wwr","ro":"ro","sowwr":"so&wwr","soro":"so&ro","wwrro":"wwr&ro"}
+    return(f"/result/language={job_name}/{site[selected_site]}")
