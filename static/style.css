@@ -837,18 +837,17 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 
 .CardSitename{
-  position: absolute;
+  display: table-cell;
   border-collapse: collapse;
+  height: 96px;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle;
 }
 .CardSitename-grid{
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
-  display: table-cell;
-  height: 96px;
-  vertical-align: middle;
-  text-align: center;
   font-size: 11px;
   color: #555;
-  width: 120px;
   line-height: 16px;
 }
 
@@ -893,7 +892,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   height: 96px;
   vertical-align: middle;
   font-size: 11px;
-  width: 120px;
+  width: 150px;
   text-align: center;
 }
 
@@ -903,7 +902,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   display: table-cell;
   height: 96px;
   vertical-align: middle;
-  width: 190px;
+  width: 200px;
   font-size: 11px;
   text-align: center;
   line-height: 18px;

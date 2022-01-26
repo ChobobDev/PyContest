@@ -179,17 +179,49 @@
                                                             </div>
                                                         </div>
                                                     {% elif job.site=="WeWorkRemotely" %}
-                                                        <div class="JobContents-yellow">
-                                                            <div class="Cardsitename">
+                                                    <div class="JobContents-yellow">
+                                                        <div class="CardSitename">
+                                                            <div class="CardSitename-grid">
                                                                 {{job.site}}
                                                             </div>
                                                         </div>
+                                                        <div class="CardSiteLogo">
+                                                            <div class="CardLogoImage">
+                                                                <img class="LogoRound"src="/static/img/so-logo.png" > 
+                                                            </div>
+                                                        </div>
+                                                        <div class="CardCompany">
+                                                            {{job.company}}
+                                                        </div>
+                                                        <div class="CardTitle">
+                                                            {{job.title}}
+                                                        </div>
+                                                        <div class="CardLocation">
+                                                            {{job.location}}
+                                                        </div>
+                                                    </div>
                                                     {% else %}
-                                                        <div class="JobContents-yellow">
-                                                            <div class="Cardsitename">
+                                                    <div class="JobContents-yellow">
+                                                        <div class="CardSitename">
+                                                            <div class="CardSitename-grid">
                                                                 {{job.site}}
                                                             </div>
                                                         </div>
+                                                        <div class="CardSiteLogo">
+                                                            <div class="CardLogoImage">
+                                                                <img class="LogoRound"src="/static/img/so-logo.png" > 
+                                                            </div>
+                                                        </div>
+                                                        <div class="CardCompany">
+                                                            {{job.company}}
+                                                        </div>
+                                                        <div class="CardTitle">
+                                                            {{job.title}}
+                                                        </div>
+                                                        <div class="CardLocation">
+                                                            {{job.location}}
+                                                        </div>
+                                                    </div>
                                                     {% endif %}
 
                                                 </div>
