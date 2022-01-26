@@ -641,7 +641,6 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .SiteButtons{
   line-height: 1.1;
-  
   position: absolute;
   left: 0;
   right: 0;
@@ -667,6 +666,11 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   position: relative;
 }
 
+.BlueSiteButtons:hover{
+  border: solid 1px #ffcd28;
+  background: #FFD340;
+}
+
 .PurpleButtons{
   white-space: nowrap;
   text-transform: none;
@@ -682,6 +686,10 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   border: solid 1px #ffcd28;
   padding-right: 35px;
   margin: 0 6px 6px 0;
+}
+.PurpleButtons:hover{
+  border: 1px solid #285a83;
+  background: #3478AE;
 }
 
 .PurpleFriend{
@@ -840,12 +848,13 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   display: table-cell;
   border-collapse: collapse;
   height: 96px;
-  width: 100px;
+  width: 120px;
   text-align: center;
   vertical-align: middle;
 }
 .CardSitename-grid{
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  font-weight: 900;
   font-size: 11px;
   color: #555;
   line-height: 16px;
@@ -854,7 +863,6 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .CardSiteLogo{
   border-collapse: collapse;
-  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   display: table-cell;
   height: 96px;
   vertical-align: middle;
@@ -891,6 +899,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 .CardCompany{
   border-collapse: collapse;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  font-weight: 900;
   display: table-cell;
   height: 96px;
   vertical-align: middle;
@@ -910,6 +919,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   text-align: center;
   line-height: 18px;
   color: #555e5e;
+  font-weight: 900;
 }
 
 .CardLocation{
@@ -923,4 +933,5 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   width: 120px;
   color: #555e5e;
   text-align: center;
+  font-weight: 900;
 }
