@@ -808,6 +808,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   table-layout: fixed;
   border-color: #FFD340;
 }
+
+
 .JobContents-yellow:hover{ 
   border: 3px solid #3478AE;
 }
@@ -906,6 +908,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   font-size: 11px;
   width: 150px;
   text-align: center;
+  text-decoration: none;
+  color: #555e5e;
 }
 
 .CardTitle{
@@ -934,4 +938,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   color: #555e5e;
   text-align: center;
   font-weight: 900;
+}
+
+.Job-contents-a{
+  text-decoration: none !important;
 }

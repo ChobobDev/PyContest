@@ -156,33 +156,35 @@
                                             {% for job in jobs %}
                                             <div class="JobItemWrap">
                                                 <div class="JobItem">
-                                                    <div class="JobContents-yellow">
-                                                        <div class="CardSitename">
-                                                            <div class="CardSitename-grid">
-                                                                {{job.site}}
+                                                    <a class="Job-contents-a" href={{job.link}} target="_blank">
+                                                        <div class="JobContents-yellow">
+                                                            <div class="CardSitename">
+                                                                <div class="CardSitename-grid">
+                                                                    {{job.site}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="CardSiteLogo">
+                                                                <div class="CardLogoImage">
+                                                                    {% if job.site=="StackOverflow" %}
+                                                                        <img class="LogoRound"src="/static/img/so-logo.png" >
+                                                                    {% elif job.site=="WeWorkRemotely" %}
+                                                                        <img class="LogoRound"src="/static/img/wwr-logo.png" >
+                                                                    {% else %}
+                                                                        <img class="LogoRound"src="/static/img/ro-logo.png" >
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                            <div class="CardCompany">
+                                                                {{job.company}}
+                                                            </div>
+                                                            <div class="CardTitle">
+                                                                {{job.title}}
+                                                            </div>
+                                                            <div class="CardLocation">
+                                                                {{job.location}}
                                                             </div>
                                                         </div>
-                                                        <div class="CardSiteLogo">
-                                                            <div class="CardLogoImage">
-                                                                {% if job.site=="StackOverflow" %}
-                                                                    <img class="LogoRound"src="/static/img/so-logo.png" >
-                                                                {% elif job.site=="WeWorkRemotely" %}
-                                                                    <img class="LogoRound"src="/static/img/wwr-logo.png" >
-                                                                {% else %}
-                                                                    <img class="LogoRound"src="/static/img/ro-logo.png" >
-                                                                {% endif %}
-                                                            </div>
-                                                        </div>
-                                                        <div class="CardCompany">
-                                                            {{job.company}}
-                                                        </div>
-                                                        <div class="CardTitle">
-                                                            {{job.title}}
-                                                        </div>
-                                                        <div class="CardLocation">
-                                                            {{job.location}}
-                                                        </div>
-                                                    </div>
+                                                    </a> 
                                                 </div>
                                             </div>
                                             {% endfor %}
