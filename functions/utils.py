@@ -12,7 +12,8 @@ def requestWithUgerAgent(url):
 
 def scrape_all(job_name):
     jobs=asyncio.run(so.get_jobs(job_name))+asyncio.run(wwr.get_jobs(job_name))+asyncio.run(ro.get_jobs(job_name))
-    save_json(job_name,jobs)
+    if len(jobs)>0:
+        save_json(job_name,jobs)
     return jobs
 
 def return_url(selected_site,job_name):
@@ -27,12 +28,6 @@ def check_time(language):
             prev_time = datetime.strptime(data[language]["time"], '%Y-%m-%d %H:%M:%S.%f')
             time_dif=int((now-prev_time).total_seconds()//3600)
         else:
-            new_language = {f"{language}":{"time":str(now)}}
-            with open("json/time.json", "r+") as file:
-                data = json.load(file)
-                data.update(new_language)
-                file.seek(0)
-                json.dump(data, file)
             time_dif=10
     return(time_dif)
 
@@ -48,8 +43,16 @@ def save_json(language,jobs):
         fout.close()
     with open("json/time.json", "r") as jsonFile:
         data = json.load(jsonFile)
-    data[language]["time"] = str(now)
-    with open("json/time.json", "w") as jsonFile:
-        json.dump(data, jsonFile)
+    if language in data:
+        data[language]["time"] = str(now)
+        with open("json/time.json", "w") as jsonFile:
+            json.dump(data, jsonFile)
+    else:
+        new_language = {f"{language}":{"time":str(now)}}
+        with open("json/time.json", "r+") as file:
+            data = json.load(file)
+            data.update(new_language)
+            file.seek(0)
+            json.dump(data, file)
 
 

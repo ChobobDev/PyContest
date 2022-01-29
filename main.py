@@ -47,7 +47,11 @@ def all_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
     if(prev_time>6):
-        return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        jobs=ut.scrape_all(language)
+        if len(jobs) !=0:
+            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        else:
+            return(redirect("/"))
     else:
         return render_template('result.html',jobs=ut.load_json(language,"all"),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
     
@@ -55,7 +59,7 @@ def all_site(language):
 @app.route("/",methods=['GET','POST'])
 def home():
     if request.method == 'POST':
-        job_name = request.form['job_name']
+        job_name = request.form['job_name'].lower()
         selected_site=request.form.get('site')
         url=ut.return_url(selected_site,job_name)
         return(redirect(url))
