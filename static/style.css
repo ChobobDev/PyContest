@@ -85,7 +85,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
     min-height: 100%;
     position: relative;
     overflow: hidden;
-    background: #5383e8;
+    background: #FFD340;
    
   }
 
@@ -212,7 +212,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #5a5ed2;
+  background-color: #3478AE;
 }
 
 .oojj-header-gnb{
@@ -249,7 +249,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   left: 0;
   top: 0;
   width: 98px;
-  background-color: #5383e8;
+  background-color: #3478AE;
 }
 
 .oojj-header-logo-anchor{
@@ -304,7 +304,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   padding: 0 12px 0 4px;
   margin: 0;
   color: #fff;
-  background-color: #5383e8;
+  background-color: #3478AE;
 }
 
 .nav-item-course{
@@ -353,7 +353,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 .l-menu{
-  background: #5383e8;
+  background: #3478AE;
   height: 48px;
   border-bottom: 1px solid #4171d6;
   box-sizing: border-box;

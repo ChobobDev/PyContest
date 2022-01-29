@@ -2,7 +2,8 @@ import requests,asyncio
 from bs4 import BeautifulSoup
 from flask import redirect
 from functions import stackoverflow as so ,weworkremotely as wwr,remoteok as ro
-
+from datetime import datetime
+import json
 
 def requestWithUgerAgent(url):
     headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Whale/3.12.129.46 Safari/537.360'}
@@ -33,3 +34,9 @@ def scrape_wwr_ro(job_name):
 def return_url(selected_site,job_name):
     site ={"all":"all","so":"so","wwr":"wwr","ro":"ro","sowwr":"so&wwr","soro":"so&ro","wwrro":"wwr&ro"}
     return(f"/result/language={job_name}/{site[selected_site]}")
+
+def check_time(language):
+    now = datetime.now()
+    with open('json/time.json') as json_file:
+        data = json.load(json_file)
+        print(data[language])
