@@ -31,7 +31,7 @@ def wwr_ro_site(language):
     else:
         json_job=ut.load_json(language)
         jobs=ut.wwr_dict(json_job)+ut.ro_dict(json_job)
-        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
 @app.route('/result/language=<language>/so&ro')
@@ -47,7 +47,7 @@ def so_ro_site(language):
     else:
         json_job=ut.load_json(language)
         jobs=ut.so_dict(json_job)+ut.ro_dict(json_job)
-        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
 @app.route('/result/language=<language>/so&wwr')
@@ -64,7 +64,7 @@ def so_wwr_site(language):
     else:
         json_job=ut.load_json(language)
         jobs=ut.so_dict(json_job)+ut.wwr_dict(json_job)
-        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
 @app.route('/result/language=<language>/wwr')
@@ -80,7 +80,7 @@ def wwr_site(language):
             return(redirect("/"))
     else:
         jobs=ut.wwr_dict(ut.load_json(language))
-        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 @app.route('/result/language=<language>/ro')
 def ro_site(language):
@@ -95,7 +95,7 @@ def ro_site(language):
             return(redirect("/"))
     else:
         jobs=ut.ro_dict(ut.load_json(language))
-        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
 @app.route('/result/language=<language>/so')
@@ -111,7 +111,7 @@ def so_site(language):
             return(redirect("/"))
     else:
         jobs=ut.so_dict(ut.load_json(language))
-        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
 @app.route('/result/language=<language>/',methods=['GET','POST'])

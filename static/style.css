@@ -945,6 +945,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 .SideButtonsContents{
+  top: 0;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   display: inline-block;
   width: 300px;
@@ -998,4 +999,9 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   height: 12px;
   color: #99a2a2;
   font-size: 11px;
+}
+
+.StickyTest{
+  position: fixed;
+  width: 300px;
 }
