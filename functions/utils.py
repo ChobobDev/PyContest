@@ -31,7 +31,7 @@ def check_time(language):
             time_dif=10
     return(time_dif)
 
-def load_json(language,sites):
+def load_json(language):
     with open(f'json/{language}.json' , 'r') as f:
         result = json.load(f)
     return result
@@ -56,3 +56,26 @@ def save_json(language,jobs):
             json.dump(data, file)
 
 
+def so_dict(jobs):
+    filtered_jobs=[]
+    for job in jobs:
+        if job["site"]=="StackOverflow":
+            print(job)
+            filtered_jobs.append(job)
+    return filtered_jobs
+
+def ro_dict(jobs):
+    filtered_jobs=[]
+    for job in jobs:
+        if job["site"]=="RemoteOk":
+            print(job)
+            filtered_jobs.append(job)
+    return filtered_jobs
+
+def wwr_dict(jobs):
+    filtered_jobs=[]
+    for job in jobs:
+        if job["site"]=="WeWorkRemotely":
+            print(job)
+            filtered_jobs.append(job)
+    return filtered_jobs
