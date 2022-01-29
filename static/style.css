@@ -943,3 +943,47 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 .Job-contents-a{
   text-decoration: none !important;
 }
+
+.SideButtonsContents{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  display: inline-block;
+  width: 300px;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.SideButton{
+  font-size: 12px;
+  margin-top: 8px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border: solid 1px #cdd2d2;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+}
+
+.SideButtonSite{
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  justify-content: center;
+}
+
+.SideButtonSiteName{
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  color: #879292;
+}
+
+.SideSiteLogo{
+  font-size: 12px;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  border: 0;
+  width: 64px;
+  height: 64px;
+  margin: 0 28px;
+}

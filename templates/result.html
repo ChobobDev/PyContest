@@ -119,6 +119,16 @@
                     </div>
                     <div class="JobContentsWrap">
                         <div class="TabItemContents">
+                            <div class="SideButtonsContents">
+                                <div class="SideButton">
+                                    <img class="SideSiteLogo" src="/static/img/so-logo.png">
+                                    <div class="SideButtonSite">
+                                        <div class="SideButtonSiteName">
+                                            StackOverflow
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="JobRenderContents">
                                 <div class="JobListContainer">
                                     <div class="JobContents">
@@ -168,37 +178,6 @@
             </div>
         </div>
         
-        <!-- <table id="table">
-            <thead class="border-b-2 border-gray-800">
-                <tr>
-                    <th class="text-left number">#</th>
-                    <th class="text-left site">site</th>
-                    <th class="text-left company">company</th>
-                    <th class="text-left location">location</th>
-                    <th class="text-left title">title</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for job in jobs %}
-                <tr>
-                    <td class="td number">{{loop.index}}
-                        <div class="filter"></div>
-                    </td>
-                    <td class="td site">{{job.site}}</td>
-                    <td class="td company">
-                        <a href={{job.link}}>
-                            <div style="height:100%;width:100%">
-                                {{job.company}}
-                            </div>
-                          </a>
-                    </td>
-                    <td class="td location">{{job.location}}</td>
-                    <td class="td title">{{job.title}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-         -->
     </div>
 </body>
 </html>
