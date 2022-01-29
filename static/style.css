@@ -989,3 +989,13 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   margin: 0 28px;
   border-radius: 100%;
 }
+
+.LastUpdate{
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  position: absolute;
+  left: 160px;
+  bottom: -18px;
+  height: 12px;
+  color: #99a2a2;
+  font-size: 11px;
+}
