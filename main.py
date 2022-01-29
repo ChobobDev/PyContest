@@ -21,40 +21,44 @@ def wwr_ro_redirect(language):
 
 @app.route('/result/language=<language>/wwr&ro')
 def wwr_ro_site(language):
-    return render_template('result.html',jobs=ut.scrape_wwr_ro(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
 
 @app.route('/result/language=<language>/so&ro')
 def so_ro_site(language):
-    return render_template('result.html',jobs=ut.scrape_so_ro(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
 
 @app.route('/result/language=<language>/so&wwr')
 def so_wwr_site(language):
-    return render_template('result.html',jobs=ut.scrape_so_wwr(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
 
 @app.route('/result/language=<language>/wwr')
 def wwr_site(language):
-    return render_template('result.html',jobs=ut.scrape_wwr(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
 @app.route('/result/language=<language>/ro')
 def ro_site(language):
-    return render_template('result.html',jobs=ut.scrape_ro(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
 
 @app.route('/result/language=<language>/so')
 def so_site(language):
-    return render_template('result.html',jobs=ut.scrape_so(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
 
 @app.route('/result/language=<language>/',methods=['GET','POST'])
 def all_site(language):
-    return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    prev_time=ut.check_time(language)
+    if(prev_time>6):
+        return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    else:
+        return render_template('result.html',jobs=ut.load_json(language,"all"),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+    
 
 @app.route("/",methods=['GET','POST'])
 def home():
     if request.method == 'POST':
         job_name = request.form['job_name']
-        ut.check_time(job_name)
         selected_site=request.form.get('site')
         url=ut.return_url(selected_site,job_name)
         return(redirect(url))
-     
+
     return render_template('index.html')
 
 if __name__ == "__main__":
