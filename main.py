@@ -45,6 +45,7 @@ def so_site(language):
 @app.route('/result/language=<language>/',methods=['GET','POST'])
 def all_site(language):
     prev_time=ut.check_time(language)
+    print(prev_time)
     if(prev_time>6):
         return render_template('result.html',jobs=ut.scrape_all(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
     else:
