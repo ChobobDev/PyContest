@@ -672,21 +672,20 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .BlueSiteButtons:hover{
   border: solid 1px #ffcd28;
-  background: #FFD340;
+  background: #fac20c;
 }
 
 .PurpleButtons{
   white-space: nowrap;
   text-transform: none;
   text-align: center;
-  
   padding: 11px 14px 10px;
   border-radius: 2px;
   position: relative;
   color: #f2f2f2;
   font-size: 14px;
   line-height: 17px;
-  background: #FFD340;
+  background: #fac20c;
   border: solid 1px #ffcd28;
   padding-right: 35px;
   margin: 0 6px 6px 0;
@@ -821,7 +820,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 .JobContents-yellow::before,
 .JobContents-yellow::after {
   box-sizing: content-box;
-  margin-right: -4px;
+  margin-right: -2px;
   position: absolute;
   top: 0;
   right: 0;
@@ -980,10 +979,13 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 .SideButtonSiteName{
-  font-size: 13px;
+  width: 150px;
+  font-size: 15px;
   font-weight: bold;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   color: #879292;
+  text-align: center;
+  
 }
 
 .SideSiteLogo{
@@ -1081,4 +1083,18 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   visibility:hidden;
   bottom:20px;
   right:20px;
+}
+
+.backtotopbtn{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  font-size: 15px;
+  text-align: center;
+  background: #FFD340;
+  border: solid 2px #3478AE;
+}
+
+.SideButton-a{
+  text-decoration: none;
 }
