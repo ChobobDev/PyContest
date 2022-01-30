@@ -4,7 +4,6 @@ from functions import utils as ut
 
 app = Flask(__name__)
 
-sitesButtons ={"all":"all","so":"/so","wwr":"./wwr","ro":"./ro","sowwr":"./so&wwr","soro":"./so&ro","wwrro":"./wwr&ro"}
 
 @app.route('/result/language=<language>/wwr&so')
 def so_wwr_redirect(language):
@@ -26,7 +25,7 @@ def wwr_ro_site(language):
         parsed_jobs=ut.scrape_all(language)
         jobs=ut.wwr_dict(parsed_jobs)+ut.ro_dict(parsed_jobs)
         if len(jobs) !=0:
-            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect("/"))
     else:
@@ -43,7 +42,7 @@ def so_ro_site(language):
         parsed_jobs=ut.scrape_all(language)
         jobs=ut.so_dict(parsed_jobs)+ut.ro_dict(parsed_jobs)
         if len(jobs) !=0:
-            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect("/"))
     else:
@@ -61,7 +60,7 @@ def so_wwr_site(language):
         jobs=ut.so_dict(parsed_jobs)+ut.wwr_dict(parsed_jobs)
         if len(jobs) !=0:
             jobs=ut.so_dict(jobs)+ut.wwr_dict(jobs)
-            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect("/"))
     else:
@@ -79,7 +78,7 @@ def wwr_site(language):
         jobs=ut.wwr_dict(parsed_jobs)
         if len(jobs) !=0:
             jobs=ut.wwr_dict(jobs)
-            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect("/"))
     else:
@@ -95,7 +94,7 @@ def ro_site(language):
         jobs=ut.ro_dict(parsed_jobs)
         if len(jobs) !=0:
             jobs=ut.ro_dict(jobs)
-            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect("/"))
     else:
@@ -112,7 +111,7 @@ def so_site(language):
         if len(jobs) !=0:
             parsed_jobs=ut.scrape_all(language)
             jobs=ut.so_dict(parsed_jobs)
-            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
+            return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect("/"))
     else:
