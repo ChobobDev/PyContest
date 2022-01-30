@@ -127,6 +127,8 @@
                         <div class="TabItemContents">
                             <div class="SideButtonsContents">
                                 <div class="Sticky">
+                                    {% set url = request.path.rsplit('/',1)[1] %}
+                                    {% if url != "so" %}
                                     <a class="SideButton-a" href="/result/language={{language}}/so">
                                         <div class="SideButton">
                                             <img class="SideSiteLogo" src="/static/img/so-logo.png">
@@ -135,6 +137,8 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {% endif %}
+                                    {% if url != "wwr" %}
                                     <a class="SideButton-a" href="/result/language={{language}}/wwr">
                                         <div class="SideButton">
                                             <img class="SideSiteLogo" src="/static/img/wwr-logo.png">
@@ -143,6 +147,8 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {% endif %}
+                                    {% if url != "ro" %}
                                     <a class="SideButton-a" href="/result/language={{language}}/ro">
                                         <div class="SideButton">
                                             <img class="SideSiteLogo" src="/static/img/ro-logo.png">
@@ -153,6 +159,8 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {% endif %}
+                                    {% if url != "so&wwr" %}
                                     <a class="SideButton-a" href="/result/language={{language}}/so&wwr">
                                         <div class="SideButton">
                                             <div class="SideSiteLogoTwo">
@@ -174,6 +182,8 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {% endif %}
+                                    {% if url != "so&ro" %}
                                     <a class="SideButton-a" href="/result/language={{language}}/so&ro">
                                         <div class="SideButton">
                                             <div class="SideSiteLogoTwo">
@@ -195,6 +205,8 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {% endif %}
+                                    {% if url != "wwr&ro" %}
                                     <a class="SideButton-a" href="/result/language={{language}}/wwr&ro">
                                         <div class="SideButton">
                                             <div class="SideSiteLogoTwo">
@@ -216,6 +228,8 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {% endif %}
+                                    {% if url != "" %}
                                     <a class="SideButton-a" href="/result/language={{language}}/">
                                         <div class="SideButton">
                                             <div class="SideSiteLogoTwo">
@@ -232,6 +246,7 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {% endif %}
 
                                 </div>
                             </div>
