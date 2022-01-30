@@ -667,7 +667,10 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   background: #3478AE;
   color: #f2f2f2;
   margin: 0 6px 6px 0;
-  position: relative;
+}
+
+.ButtonForm{
+  display:inline-block;
 }
 
 .BlueSiteButtons:hover{

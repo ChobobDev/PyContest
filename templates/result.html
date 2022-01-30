@@ -99,15 +99,18 @@
                                 </span>
                             </div>
                             <div class="SiteButtons">
-                                <a href="/result/language={{language}}/">
-                                    <button class="BlueSiteButtons">
+                                <form class="ButtonForm" method="post">
+                                    <button class="BlueSiteButtons" name="update">
                                         UPDATE
                                     </button>
-                                </a>
-                                <button class="PurpleButtons">
-                                    Export
-                                    <img class="PurpleFriend" src="/static/img/download.svg">
-                                </button>
+                                </form>
+                                <form class="ButtonForm" method="post">
+                                    <button class="PurpleButtons">
+                                        Export
+                                        <img class="PurpleFriend" src="/static/img/download.svg">
+                                    </button>
+                                </form>
+
                             </div>
                         </div>
                         <div class="LastUpdate">
