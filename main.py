@@ -23,7 +23,8 @@ def wwr_ro_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
     if(prev_time>6):
-        jobs=ut.scrape_all(language)
+        parsed_jobs=ut.scrape_all(language)
+        jobs=ut.wwr_dict(parsed_jobs)+ut.ro_dict(parsed_jobs)
         if len(jobs) !=0:
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
         else:
@@ -39,7 +40,8 @@ def so_ro_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
     if(prev_time>6):
-        jobs=ut.scrape_all(language)
+        parsed_jobs=ut.scrape_all(language)
+        jobs=ut.so_dict(parsed_jobs)+ut.ro_dict(parsed_jobs)
         if len(jobs) !=0:
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
         else:
@@ -55,7 +57,8 @@ def so_wwr_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
     if(prev_time>6):
-        jobs=ut.scrape_all(language)
+        parsed_jobs=ut.scrape_all(language)
+        jobs=ut.so_dict(parsed_jobs)+ut.wwr_dict(parsed_jobs)
         if len(jobs) !=0:
             jobs=ut.so_dict(jobs)+ut.wwr_dict(jobs)
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
@@ -72,7 +75,8 @@ def wwr_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
     if(prev_time>6):
-        jobs=ut.scrape_all(language)
+        parsed_jobs=ut.scrape_all(language)
+        jobs=ut.wwr_dict(parsed_jobs)
         if len(jobs) !=0:
             jobs=ut.wwr_dict(jobs)
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
@@ -87,7 +91,8 @@ def ro_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
     if(prev_time>6):
-        jobs=ut.scrape_all(language)
+        parsed_jobs=ut.scrape_all(language)
+        jobs=ut.ro_dict(parsed_jobs)
         if len(jobs) !=0:
             jobs=ut.ro_dict(jobs)
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
@@ -105,7 +110,8 @@ def so_site(language):
     if(prev_time>6):
         jobs=ut.scrape_all(language)
         if len(jobs) !=0:
-            jobs=ut.so_dict(jobs)
+            parsed_jobs=ut.scrape_all(language)
+            jobs=ut.so_dict(parsed_jobs)
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language)
         else:
             return(redirect("/"))
