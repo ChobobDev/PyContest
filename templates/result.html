@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Gopher Job Scrapper</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body class="main-body">
     <div class="main-body" class="wrap">
         <header class="header">
@@ -85,7 +87,7 @@
                     <div class="JobLayoutHeader">
                         <div class="Face">
                             <div class="ProfileIcon">
-                                <img src={{langlogo}}  onerror="this.src='/static/img/logo.png'" class="ProfileImage"/>
+                                <img src={{langlogo}} onerror="this.src='/static/img/logo.png'" class="ProfileImage" />
                                 <span class="Level" title>{{ jobs|length }}</span>
                             </div>
                         </div>
@@ -103,9 +105,9 @@
                                 </a>
                                 <button class="PurpleButtons">
                                     Export
-                                    <img class="PurpleFriend" src="/static/img/download.svg" >
+                                    <img class="PurpleFriend" src="/static/img/download.svg">
                                 </button>
-                            </div>             
+                            </div>
                         </div>
                         <div class="LastUpdate">
                             Last Updated {{lastupdate}} hours ago
@@ -123,7 +125,7 @@
                     <div class="JobContentsWrap">
                         <div class="TabItemContents">
                             <div class="SideButtonsContents">
-                                <div class="StickyTest">
+                                <div class="Sticky">
                                     <div class="SideButton">
                                         <img class="SideSiteLogo" src="/static/img/so-logo.png">
                                         <div class="SideButtonSite">
@@ -148,9 +150,48 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="SideButton">
+                                        <div class="SideSiteLogoTwo">
+                                            <div class="TwoSideLogoBox">
+                                                <img class="SideSiteLogo-up" src="/static/img/wwr-logo.png">
+                                                <img class="SideSiteLogo-down" src="/static/img/so-logo.png">
+                                            </div>
+                                        </div>
+                                        <div class="SideButtonSite">
+                                            <div class="SideButtonSiteName">
+                                                StackOverflow & WeWorkRemotely
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="SideButton">
+                                        <div class="SideSiteLogoTwo">
+                                            <div class="TwoSideLogoBox">
+                                                <img class="SideSiteLogo-up" src="/static/img/ro-logo.png">
+                                                <img class="SideSiteLogo-down" src="/static/img/so-logo.png">
+                                            </div>
+                                        </div>
+                                        <div class="SideButtonSite">
+                                            <div class="SideButtonSiteName">
+                                                StackOverflow & RemoteOk
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="SideButton">
+                                        <div class="SideSiteLogoTwo">
+                                            <div class="TwoSideLogoBox">
+                                                <img class="SideSiteLogo-up" src="/static/img/ro-logo.png">
+                                                <img class="SideSiteLogo-down" src="/static/img/wwr-logo.png">
+                                            </div>
+                                        </div>
+                                        <div class="SideButtonSite">
+                                            <div class="SideButtonSiteName">
+                                                WeWorkRemotely & RemoteOk
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
-                                
+
                             </div>
                             <div class="JobRenderContents">
                                 <div class="JobListContainer">
@@ -169,11 +210,14 @@
                                                             <div class="CardSiteLogo">
                                                                 <div class="CardLogoImage">
                                                                     {% if job.site=="StackOverflow" %}
-                                                                        <img class="LogoRound"src="/static/img/so-logo.png" >
+                                                                    <img class="LogoRound"
+                                                                        src="/static/img/so-logo.png">
                                                                     {% elif job.site=="WeWorkRemotely" %}
-                                                                        <img class="LogoRound"src="/static/img/wwr-logo.png" >
+                                                                    <img class="LogoRound"
+                                                                        src="/static/img/wwr-logo.png">
                                                                     {% else %}
-                                                                        <img class="LogoRound"src="/static/img/ro-logo.png" >
+                                                                    <img class="LogoRound"
+                                                                        src="/static/img/ro-logo.png">
                                                                     {% endif %}
                                                                 </div>
                                                             </div>
@@ -187,7 +231,7 @@
                                                                 {{job.location}}
                                                             </div>
                                                         </div>
-                                                    </a> 
+                                                    </a>
                                                 </div>
                                             </div>
                                             {% endfor %}
@@ -200,7 +244,8 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </body>
+
 </html>

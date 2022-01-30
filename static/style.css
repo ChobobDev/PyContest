@@ -811,7 +811,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 
 .JobContents-yellow:hover{ 
-  border: 3px solid #3478AE;
+  border: 2px solid #3478AE;
 }
 
 .JobContents-yellow::before,
@@ -963,6 +963,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   border: solid 2px #cdd2d2;
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   margin-bottom: 8px;
+  border-radius: 5px;
 }
 
 .SideButtonSite{
@@ -991,6 +992,34 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   border-radius: 100%;
 }
 
+.SideSiteLogoTwo{
+  font-size: 12px;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+  border: 0;
+  width: 64px;
+  height: 64px;
+  margin: 0 28px;
+}
+
+.SideSiteLogo-up{
+  position:absolute;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  border-radius: 100%;
+  z-index: 2;
+}
+.SideSiteLogo-down{
+  position:absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 100%;
+  z-index: 3;
+}
+
 .LastUpdate{
   font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   position: absolute;
@@ -1001,7 +1030,43 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   font-size: 11px;
 }
 
-.StickyTest{
-  position: fixed;
+.Sticky{
+  /* position: fixed; */
   width: 300px;
+}
+
+.TwoSideLogoBox{
+  position: absolute;
+  border: 0;
+  width: 64px;
+  height: 64px;
+}
+
+.SideLogo-top{
+  position:absolute;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  border-radius: 100%;
+  z-index: 2;
+}
+
+.SideLogo-bl{
+  position:absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.SideLogo-br{
+  position:absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 100%;
+  z-index: 3;
 }
