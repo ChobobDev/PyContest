@@ -127,13 +127,19 @@ def all_site(language):
         jobs=ut.scrape_all(language)
         if len(jobs) !=0:
             if request.method == 'POST':
-                print("Clicked")
+                if request.form.get('export') == 'export':
+                    print("Export")
+                elif request.form.get('update') == 'update':
+                    print("Update")
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect("/"))
     else:
         if request.method == 'POST':
-            print("Clicked")
+            if request.form.get('export') == 'export':
+                print("Export")
+            elif request.form.get('update') == 'update':
+                print("Update")
         return render_template('result.html',jobs=ut.load_json(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
     
