@@ -1003,8 +1003,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .SideSiteLogo-up{
   position:absolute;
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
   top: 0px;
   left: 0px;
   border-radius: 100%;
@@ -1012,8 +1012,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 .SideSiteLogo-down{
   position:absolute;
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
   bottom: 0px;
   right: 0px;
   border-radius: 100%;
@@ -1044,8 +1044,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .SideLogo-top{
   position:absolute;
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
   border-radius: 100%;
   margin-left: 12px;
   z-index: 2;
@@ -1054,8 +1054,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .SideLogo-bl{
   position:absolute;
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
   bottom: 0px;
   left: 0px;
   border-radius: 100%;
@@ -1064,10 +1064,19 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .SideLogo-br{
   position:absolute;
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
   bottom: 0px;
   right: 0px;
   border-radius: 100%;
   z-index: 3;
+}
+
+.BackTop{
+  position: fixed;
+  border-radius: 100%;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
 }
