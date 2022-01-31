@@ -237,6 +237,7 @@ def home():
         selected_site=request.form.get('site')
         url=ut.return_url(selected_site,job_name)
         return(redirect(url))
+        
 
     return render_template('index.html')
 

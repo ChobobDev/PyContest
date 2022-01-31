@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from flask import redirect
 from functions import stackoverflow as so ,weworkremotely as wwr,remoteok as ro
 from datetime import datetime
+from pytz import timezone
 
         
 def requestWithUgerAgent(url):
@@ -21,11 +22,11 @@ def return_url(selected_site,job_name):
     return(f"/result/language={job_name}/{site[selected_site]}")
 
 def check_time(language):
-    now = datetime.now()
+    now = datetime.now(timezone('Asia/Seoul'))
     with open('json/time.json') as json_file:
         data = json.load(json_file)
         if language in data:
-            prev_time = datetime.strptime(data[language]["time"], '%Y-%m-%d %H:%M:%S.%f')
+            prev_time = datetime.strptime(data[language]["time"], '%Y-%m-%d %H:%M:%S.%f%z')
             time_dif=int((now-prev_time).total_seconds()//3600)
         else:
             time_dif=10
@@ -37,7 +38,7 @@ def load_json(language):
     return result
 
 def save_json(language,jobs):
-    now = datetime.now()
+    now = datetime.now(timezone('Asia/Seoul'))
     with open(f'json/{language}.json', 'w') as fout:
         json.dump(jobs,fout)
         fout.close()
