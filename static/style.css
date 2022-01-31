@@ -1101,3 +1101,33 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 .SideButton-a{
   text-decoration: none;
 }
+
+.crtcontainer{
+  position: relative;
+  min-height: 650px;
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.crtscreen{
+  width: 1080px;
+  height: 600px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.crtlogo{
+  vertical-align: center;
+  text-align: center;
+}
+
+.crtlogosize{
+  position: absolute;
+  width:400px;
+  z-index: -1;
+  margin: 0 auto;
+}
+.crttext{
+  z-index: 1;
+  margin: 0 auto;
+}
