@@ -17,7 +17,7 @@ def so_ro_redirect(language):
 def wwr_ro_redirect(language):
     return redirect(f"/result/language={language}/wwr&ro")
 
-@app.route('/result/language=<language>/wwr&ro')
+@app.route('/result/language=<language>/wwr&ro',methods=['GET','POST'])
 def wwr_ro_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
@@ -46,7 +46,7 @@ def wwr_ro_site(language):
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
-@app.route('/result/language=<language>/so&ro')
+@app.route('/result/language=<language>/so&ro',methods=['GET','POST'])
 def so_ro_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
@@ -75,7 +75,7 @@ def so_ro_site(language):
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
-@app.route('/result/language=<language>/so&wwr')
+@app.route('/result/language=<language>/so&wwr',methods=['GET','POST'])
 def so_wwr_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
@@ -104,7 +104,7 @@ def so_wwr_site(language):
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
-@app.route('/result/language=<language>/wwr')
+@app.route('/result/language=<language>/wwr',methods=['GET','POST'])
 def wwr_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
@@ -131,7 +131,7 @@ def wwr_site(language):
                 return(redirect(f'/result/language={language}/wwr'))
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
-@app.route('/result/language=<language>/ro')
+@app.route('/result/language=<language>/ro',methods=['GET','POST'])
 def ro_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
@@ -159,7 +159,7 @@ def ro_site(language):
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
-@app.route('/result/language=<language>/so')
+@app.route('/result/language=<language>/so',methods=['GET','POST'])
 def so_site(language):
     prev_time=ut.check_time(language)
     print(prev_time)
