@@ -139,7 +139,8 @@ def all_site(language):
             if request.form.get('export') == 'export':
                 print("Export")
             elif request.form.get('update') == 'update':
-                print("Update")
+                ut.scrape_all(language)
+                return(redirect(f'/result/language={language}/'))
         return render_template('result.html',jobs=ut.load_json(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
     
