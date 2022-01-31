@@ -1,4 +1,4 @@
-import requests,asyncio,json
+import requests,asyncio,json,csv
 from bs4 import BeautifulSoup
 from flask import redirect
 from functions import stackoverflow as so ,weworkremotely as wwr,remoteok as ro
@@ -79,3 +79,11 @@ def wwr_dict(jobs):
             print(job)
             filtered_jobs.append(job)
     return filtered_jobs
+
+
+def export(jobs,language,site):
+    file = open(f"{language}-jobs-{site}.csv", mode="w")
+    writer = csv.writer(file)
+    writer.writerow(["site","company", "title","location","link"])
+    for job in jobs:
+        writer.writerow(job.values())

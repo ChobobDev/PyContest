@@ -1,5 +1,5 @@
 import asyncio
-from flask import Flask,render_template,request,redirect
+from flask import Flask,render_template,request,redirect,send_file
 from functions import utils as ut
 
 app = Flask(__name__)
@@ -27,7 +27,8 @@ def wwr_ro_site(language):
         if len(jobs) !=0:
             if request.method == 'POST':
                 if request.form.get('export') == 'export':
-                    print("Export")
+                    ut.export(jobs,language,"wwrro")
+                    return send_file(f"{language}-jobs-wwrro.csv")
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/wwr&ro'))
@@ -39,7 +40,8 @@ def wwr_ro_site(language):
         jobs=ut.wwr_dict(json_job)+ut.ro_dict(json_job)
         if request.method == 'POST':
             if request.form.get('export') == 'export':
-                print("Export")
+                ut.export(jobs,language,"wwrro")
+                return send_file(f"{language}-jobs-wwrro.csv")
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/wwr&ro'))
@@ -56,7 +58,8 @@ def so_ro_site(language):
         if len(jobs) !=0:
             if request.method == 'POST':
                 if request.form.get('export') == 'export':
-                    print("Export")
+                    ut.export(jobs,language,"soro")
+                    return send_file(f"{language}-jobs-soro.csv")
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/so&ro'))
@@ -68,7 +71,8 @@ def so_ro_site(language):
         jobs=ut.so_dict(json_job)+ut.ro_dict(json_job)
         if request.method == 'POST':
             if request.form.get('export') == 'export':
-                print("Export")
+                ut.export(jobs,language,"soro")
+                return send_file(f"{language}-jobs-soro.csv")
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/so&ro'))
@@ -85,7 +89,8 @@ def so_wwr_site(language):
         if len(jobs) !=0:
             if request.method == 'POST':
                 if request.form.get('export') == 'export':
-                    print("Export")
+                    ut.export(jobs,language,"sowwr")
+                    return send_file(f"{language}-jobs-sowwr.csv")
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/so&wwr'))
@@ -97,7 +102,8 @@ def so_wwr_site(language):
         jobs=ut.so_dict(json_job)+ut.wwr_dict(json_job)
         if request.method == 'POST':
             if request.form.get('export') == 'export':
-                print("Export")
+                ut.export(jobs,language,"sowwr")
+                return send_file(f"{language}-jobs-sowwr.csv")
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/so&wwr'))
@@ -114,7 +120,8 @@ def wwr_site(language):
         if len(jobs) !=0:
             if request.method == 'POST':
                 if request.form.get('export') == 'export':
-                    print("Export")
+                    ut.export(jobs,language,"wwr")
+                    return send_file(f"{language}-jobs-wwr.csv")
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/wwr'))
@@ -125,7 +132,8 @@ def wwr_site(language):
         jobs=ut.wwr_dict(ut.load_json(language))
         if request.method == 'POST':
             if request.form.get('export') == 'export':
-                print("Export")
+                ut.export(jobs,language,"wwr")
+                return send_file(f"{language}-jobs-wwr.csv")
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/wwr'))
@@ -141,7 +149,8 @@ def ro_site(language):
         if len(jobs) !=0:
             if request.method == 'POST':
                 if request.form.get('export') == 'export':
-                    print("Export")
+                    ut.export(jobs,language,"ro")
+                    return send_file(f"{language}-jobs-ro.csv")
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/ro'))
@@ -152,7 +161,8 @@ def ro_site(language):
         jobs=ut.ro_dict(ut.load_json(language))
         if request.method == 'POST':
             if request.form.get('export') == 'export':
-                print("Export")
+                ut.export(jobs,language,"ro")
+                return send_file(f"{language}-jobs-ro.csv")
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/ro'))
@@ -169,7 +179,8 @@ def so_site(language):
             jobs=ut.so_dict(jobs)
             if request.method == 'POST':
                 if request.form.get('export') == 'export':
-                    print("Export")
+                    ut.export(jobs,language,"so")
+                    return send_file(f"{language}-jobs-so.csv")
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/so'))
@@ -180,7 +191,8 @@ def so_site(language):
         jobs=ut.so_dict(ut.load_json(language))
         if request.method == 'POST':
             if request.form.get('export') == 'export':
-                print("Export")
+                ut.export(jobs,language,"so")
+                return send_file(f"{language}-jobs-so.csv")
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/so'))
@@ -196,7 +208,8 @@ def all_site(language):
         if len(jobs) !=0:
             if request.method == 'POST':
                 if request.form.get('export') == 'export':
-                    print("Export")
+                    ut.export(jobs,language,"all")
+                    return send_file(f"{language}-jobs-all.csv")
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/'))
@@ -204,13 +217,15 @@ def all_site(language):
         else:
             return(redirect("/"))
     else:
+        jobs=ut.load_json(language)
         if request.method == 'POST':
             if request.form.get('export') == 'export':
-                print("Export")
+                ut.export(jobs,language,"all")
+                return send_file(f"{language}-jobs-all.csv")
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/'))
-        return render_template('result.html',jobs=ut.load_json(language),langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
+        return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
     
 
