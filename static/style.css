@@ -1293,3 +1293,93 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   
   
 }
+
+.menu-item-div{
+    list-style: none;
+    vertical-align: middle;
+    display: flex;
+    height: 32px;
+    background: #fff;
+    border-radius: 4px;
+    width: 340px;
+    margin-top: 8px;
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+    margin-left: auto;
+}
+
+.header-search-box-wrap{
+    list-style: none;
+    vertical-align: middle;
+    display: flex;
+    height: 32px;
+    background: #fff;
+    border-radius: 4px;
+    width: 340px;
+    margin-top: 4px;
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+    margin-left: auto;
+}
+
+.header-search-box{
+    list-style: none;
+    font-family: inherit;
+    margin: 0;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 9px 42px 8px 14px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #727272;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.header-search-btn{
+    height: 32px;
+    width: 54px;
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+.header-btn-img{
+    list-style: none;
+    font-size: 100%;
+    text-transform: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+    border: 0;
+    height: 20px;
+    border-radius: 5%;
+}
+
+.search-setting-header-wrap{
+    list-style: none;
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ecf2ff;
+    color: #4171d6;
+    font-size: 12px;
+    padding: 0 12px;
+    border-radius: 4px 0 0 4px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.search-setting-header{
+    list-style: none;
+    color: #4171d6;
+    font-size: 12px;
+    line-height: 32px;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+    margin-right: 16px;
+}
+
+.header-form-grid{
+  text-align: right;
+}

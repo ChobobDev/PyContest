@@ -49,6 +49,11 @@ def wwr_ro_site(language):
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/wwr&ro'))
+                elif request.form.get('header-search')=='header-search':
+                    job_name = request.form['searchJobHeader'].lower()
+                    selected_site=request.form.get('site')
+                    url=ut.return_url(selected_site,job_name)
+                    return(redirect(url))
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect(f"/notfound={language}"))
@@ -62,6 +67,11 @@ def wwr_ro_site(language):
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/wwr&ro'))
+            elif request.form.get('header-search')=='header-search':
+                job_name = request.form['searchJobHeader'].lower()
+                selected_site=request.form.get('site')
+                url=ut.return_url(selected_site,job_name)
+                return(redirect(url))
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
@@ -80,6 +90,11 @@ def so_ro_site(language):
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/so&ro'))
+                elif request.form.get('header-search')=='header-search':
+                    job_name = request.form['searchJobHeader'].lower()
+                    selected_site=request.form.get('site')
+                    url=ut.return_url(selected_site,job_name)
+                    return(redirect(url))
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect(f"/notfound={language}"))
@@ -93,6 +108,11 @@ def so_ro_site(language):
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/so&ro'))
+            elif request.form.get('header-search')=='header-search':
+                job_name = request.form['searchJobHeader'].lower()
+                selected_site=request.form.get('site')
+                url=ut.return_url(selected_site,job_name)
+                return(redirect(url))
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
@@ -111,6 +131,11 @@ def so_wwr_site(language):
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/so&wwr'))
+                elif request.form.get('header-search')=='header-search':
+                    job_name = request.form['searchJobHeader'].lower()
+                    selected_site=request.form.get('site')
+                    url=ut.return_url(selected_site,job_name)
+                    return(redirect(url))
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect(f"/notfound={language}"))
@@ -124,6 +149,11 @@ def so_wwr_site(language):
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/so&wwr'))
+            elif request.form.get('header-search')=='header-search':
+                job_name = request.form['searchJobHeader'].lower()
+                selected_site=request.form.get('site')
+                url=ut.return_url(selected_site,job_name)
+                return(redirect(url))
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
@@ -142,6 +172,11 @@ def wwr_site(language):
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/wwr'))
+                elif request.form.get('header-search')=='header-search':
+                    job_name = request.form['searchJobHeader'].lower()
+                    selected_site=request.form.get('site')
+                    url=ut.return_url(selected_site,job_name)
+                    return(redirect(url))
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect(f"/notfound={language}"))
@@ -154,6 +189,11 @@ def wwr_site(language):
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/wwr'))
+            elif request.form.get('header-search')=='header-search':
+                job_name = request.form['searchJobHeader'].lower()
+                selected_site=request.form.get('site')
+                url=ut.return_url(selected_site,job_name)
+                return(redirect(url))
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 @app.route('/result/language=<language>/ro',methods=['GET','POST'])
@@ -171,6 +211,11 @@ def ro_site(language):
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/ro'))
+                elif request.form.get('header-search')=='header-search':
+                    job_name = request.form['searchJobHeader'].lower()
+                    selected_site=request.form.get('site')
+                    url=ut.return_url(selected_site,job_name)
+                    return(redirect(url))
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect(f"/notfound={language}"))
@@ -183,6 +228,11 @@ def ro_site(language):
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/ro'))
+            elif request.form.get('header-search')=='header-search':
+                job_name = request.form['searchJobHeader'].lower()
+                selected_site=request.form.get('site')
+                url=ut.return_url(selected_site,job_name)
+                return(redirect(url))
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
@@ -201,6 +251,11 @@ def so_site(language):
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/so'))
+                elif request.form.get('header-search')=='header-search':
+                    job_name = request.form['searchJobHeader'].lower()
+                    selected_site=request.form.get('site')
+                    url=ut.return_url(selected_site,job_name)
+                    return(redirect(url))
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect(f"/notfound={language}"))
@@ -213,6 +268,11 @@ def so_site(language):
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/so'))
+            elif request.form.get('header-search')=='header-search':
+                job_name = request.form['searchJobHeader'].lower()
+                selected_site=request.form.get('site')
+                url=ut.return_url(selected_site,job_name)
+                return(redirect(url))
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
 
@@ -230,6 +290,11 @@ def all_site(language):
                 elif request.form.get('update') == 'update':
                     ut.scrape_all(language)
                     return(redirect(f'/result/language={language}/'))
+                elif request.form.get('header-search')=='header-search':
+                    job_name = request.form['searchJobHeader'].lower()
+                    selected_site=request.form.get('site')
+                    url=ut.return_url(selected_site,job_name)
+                    return(redirect(url))
             return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=0)
         else:
             return(redirect(f"/notfound={language}"))
@@ -242,6 +307,12 @@ def all_site(language):
             elif request.form.get('update') == 'update':
                 ut.scrape_all(language)
                 return(redirect(f'/result/language={language}/'))
+            elif request.form.get('header-search')=='header-search':
+                job_name = request.form['searchJobHeader'].lower()
+                selected_site=request.form.get('site')
+                url=ut.return_url(selected_site,job_name)
+                return(redirect(url))
+
         return render_template('result.html',jobs=jobs,langlogo=f"/static/img/{language.lower()}-logo.png",language=language,lastupdate=prev_time)
     
     
@@ -258,4 +329,4 @@ def home():
 
     return render_template('index.html')
 
-app.run(host='0.0.0.0',port=8080)
+app.run(host='0.0.0.0',port=8080,debug="true")
