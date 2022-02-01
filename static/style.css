@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 html,body {
@@ -1105,7 +1106,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .crt-container{
     position: relative;
-    height: 800px;
+    height: 100%;
     width: 100%;
     margin: 0 auto;
   }
@@ -1272,7 +1273,6 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .crt-text-wrap{
   width: 50%;
-  height: 50%;
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
