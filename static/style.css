@@ -1105,8 +1105,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .crt-container{
     position: relative;
-    min-height: 700px;
-    padding-bottom: 120px;
+    min-height: 800px;
     width: 100%;
     margin: 0 auto;
     background-color: #FFD340;
