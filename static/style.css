@@ -1102,12 +1102,16 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   text-decoration: none;
 }
 
+
 .crt-container{
     position: relative;
     min-height: 700px;
     padding-bottom: 120px;
     width: 100%;
     margin: 0 auto;
+    background-color: #FFD340;
+    background-image: url(/static/img/logo.png);
+    background-size: 200px;
   }
 @keyframes flicker {
   0% {
@@ -1273,10 +1277,10 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 .crt-text-wrap{
   width: 50%;
   height: 50%;
-  overflow: auto;
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+  background-color: #FFD340;
 }
 
 .crt-text{
@@ -1288,8 +1292,8 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   text-align: center;
   transform: translateY(-50%);
   transform: translateX(-50%);
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   
   
 }
@@ -1380,6 +1384,20 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
     margin-right: 16px;
 }
 
-.header-form-grid{
-  text-align: right;
+.not-found-container{
+  position: relative;
+  min-height: 600px;
+  padding-bottom: 120px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #FFD340;
+
+}
+
+.not-found-bg{
+  position: relative;
+  height: 600px;
+  background-image: url(/static/img/logo.png);
+  background-size: 300px;
+  opacity: 0.4;
 }
