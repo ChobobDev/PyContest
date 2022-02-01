@@ -1105,12 +1105,9 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 
 .crt-container{
     position: relative;
-    min-height: 800px;
+    height: 800px;
     width: 100%;
     margin: 0 auto;
-    background-color: #FFD340;
-    background-image: url(/static/img/logo.png);
-    background-size: 200px;
   }
 @keyframes flicker {
   0% {
