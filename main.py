@@ -2,8 +2,16 @@ import asyncio
 from flask import Flask,render_template,request,redirect,send_file
 from functions import utils as ut
 
-app = Flask(__name__)
+app = Flask('app')
 
+def timer():
+     for i in range(0,5):
+        return i
+
+
+@app.context_processor
+def context_processor():
+    return dict(key='value',timer=timer)
 
 @app.route('/result/language=<language>/wwr&so')
 def so_wwr_redirect(language):
@@ -23,7 +31,7 @@ def job_not_found(language):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    # note that we set the 404 status explicitly
+   
     return render_template('404.html'), 404
 
 @app.route('/result/language=<language>/wwr&ro',methods=['GET','POST'])
@@ -250,5 +258,4 @@ def home():
 
     return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run(debug="on")
+app.run(host='0.0.0.0',port=8080)
