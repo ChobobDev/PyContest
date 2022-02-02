@@ -1387,13 +1387,27 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
   width: 100%;
   margin: 0 auto;
   background-color: #FFD340;
+  background-image: url(/static/img/logo.png);
+  background-size: 200px;
 
 }
 
 .not-found-bg{
   position: relative;
-  height: 600px;
-  background-image: url(/static/img/logo.png);
-  background-size: 300px;
-  opacity: 0.4;
+
+}
+
+.crt-text-button{
+  margin: 0;
+  color:#000;
+  position: relative;
+  vertical-align: middle;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.crt-text-button:hover{
+  color: #fff;
 }

@@ -79,14 +79,23 @@
                 <li class="menu-item">
                     <a href="/" class="menu-item-name-not-active"> MIZZU </a>
                 </li>
-
+                <li class="menu-item">
+                    <a href="/" class="menu-item-name-not-active"> CHINSHUU </a>
+                </li>
             </ul>
         </div>
-
         <div class="not-found-container">
-            <div class="not-found-bg">
-                {{language}}
+            <div class="crt">
+                <div class="crt-text-wrap">
+                    <div class="crt-text">You searched " {{language.upper()}} ".</div>
+                    <div class="crt-text"> { 🍕 }</div>
+                    <div class="crt-text">Did not match any document.</div>
+                    <a href="/" class="SideButton-a">
+                        <div class="crt-text-button">-Search Again-</div>
+                    </a>
+                </div>
             </div>
+
         </div>
     </div>
 </body>
