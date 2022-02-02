@@ -341,20 +341,56 @@ select,button,input,a,option{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 .l-footer{
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  
 }
 
 .footer{
   width: 1080px;
   margin: 0 auto;
   padding: 40px 0;
-  
   color: #fff;
+}
 
+.footer-links{
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+    color: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 15px;
+    font-size: 12px;
+}
+
+.footer-link-item{
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
+    color: #fff;
+    line-height: 15px;
+    font-size: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0;
+}
+
+.link-item-format{
+  text-decoration: none !important;
+  color: #fff;
+  font-weight: 900;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.footer-texts{
+    color: #fff;
+    margin-top: 10px;
+    line-height: 1.5;
+    font-size: 11px;
+    width: 1000px;
+    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
 }
 
 .l-menu{
@@ -551,6 +587,7 @@ select,button,input,a,option{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 .search-setting{
+  text-align: center;
   background-color: #788185;
   color: #fff;
   border: none;
