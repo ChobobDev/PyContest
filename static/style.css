@@ -1364,7 +1364,6 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
     background: #ecf2ff;
     color: #4171d6;
     font-size: 12px;
-    padding: 0 12px;
     border-radius: 4px 0 0 4px;
     line-height: 32px;
     cursor: pointer;
@@ -1373,11 +1372,14 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 .search-setting-header{
     list-style: none;
     color: #4171d6;
+    background: #ecf2ff;
     font-size: 12px;
     line-height: 32px;
-    cursor: pointer;
+    border-radius: 4px 0 0 4px;
+    padding: 0 12px;
     font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
-    margin-right: 16px;
+    height: 100%;
+    border: none;
 }
 
 .not-found-container{
