@@ -1336,23 +1336,15 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
 }
 
 .header-search-btn{
-    height: 32px;
-    width: 54px;
-    text-align: center;
-    background: none;
+    background: #00a2e8;
     border: none;
+    border-radius: 0 4px 4px 0;
+
 }
 
 .header-btn-img{
-    list-style: none;
-    font-size: 100%;
-    text-transform: none;
-    cursor: pointer;
-    text-align: center;
-    font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
-    border: 0;
-    height: 20px;
-    border-radius: 5%;
+    top: 50%;
+    left: 50%;
 }
 
 .search-setting-header-wrap{
@@ -1366,7 +1358,6 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
     font-size: 12px;
     border-radius: 4px 0 0 4px;
     line-height: 32px;
-    cursor: pointer;
 }
 
 .search-setting-header{
@@ -1377,6 +1368,7 @@ button,input,a{ cursor: url("/static/img/onCursor.png"), auto;}
     line-height: 32px;
     border-radius: 4px 0 0 4px;
     padding: 0 12px;
+    margin-right: 10px;
     font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
     height: 100%;
     border: none;
