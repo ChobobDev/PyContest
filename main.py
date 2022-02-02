@@ -1,6 +1,8 @@
 import asyncio
+from doctest import debug
 from flask import Flask,render_template,request,redirect,send_file
 from functions import utils as ut
+from threading import Thread
 
 app = Flask('app')
 
@@ -329,4 +331,4 @@ def home():
 
     return render_template('index.html')
 
-app.run(host='0.0.0.0',port=8080,debug="true")
+Thread(target=app.run,args=("0.0.0.0",8080)).start()
