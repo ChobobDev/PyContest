@@ -1443,3 +1443,10 @@ select,button,input,a,option{ cursor: url("/static/img/onCursor.png"), auto;}
 .crt-text-button:hover{
   color: #fff;
 }
+
+.crt-profile-container{
+    position: relative;
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+  }

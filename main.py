@@ -1,18 +1,11 @@
 import asyncio
-from flask import Flask,render_template,request,redirect,send_file
+from flask import Flask,render_template,request,redirect,send_file,abort
 from functions import utils as ut
 from threading import Thread
 
 app = Flask('app')
 
-def timer():
-     for i in range(0,5):
-        return i
 
-
-@app.context_processor
-def context_processor():
-    return dict(key='value',timer=timer)
 
 @app.route('/result/language=<language>/wwr&so')
 def so_wwr_redirect(language):
@@ -34,6 +27,14 @@ def job_not_found(language):
 def page_not_found(e):
    
     return render_template('404.html'), 404
+
+@app.route('/profile=<name>')
+def profile(name):
+    special_list=["arthur","nico","lynn","mizzu","chinshuu","woori","dgm"]
+    if name in special_list:
+        return render_template('special_profile.html',name=name)
+    else:
+        abort(404)
 
 @app.route('/result/language=<language>/wwr&ro',methods=['GET','POST'])
 def wwr_ro_site(language):

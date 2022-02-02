@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gopher Job Scrapper</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="main-body"
+    style="background-color:#FFD340; background-image: url(/static/img/logo.png); background-size: 200px;">
+    <div class="crt-container">
+        <div class="crt">
+            <div class="crt-text-wrap">
+                <div style="padding-top: 20px;">
+                    <img src="/static/img/profile/{{name}}.png"
+                        style="height: 400px; border-radius: 100%; border-color: black; border: solid 3px;">
+                </div>
+                <div class="crt-text">AWESOME</div>
+                <div class="crt-text">{{name.upper()}}</div>
+                <script>
+                    window.setTimeout(function () {
+
+                        window.location.href = "/";
+
+                    }, 3000);
+
+                </script>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
