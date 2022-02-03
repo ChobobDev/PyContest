@@ -1011,6 +1011,10 @@ select,button,input,a,option{ cursor: url("/static/img/onCursor.png"), auto;}
   border-radius: 5px;
 }
 
+.SideButton:hover{
+  background-color: #afc5f5;
+}
+
 .SideButtonSite{
   font-size: 12px;
   display: flex;
